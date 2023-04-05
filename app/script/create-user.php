@@ -7,7 +7,7 @@ $password = $_GET['password'];
 shell_exec("useradd –m  $username");
 
 # Définir le mot de passe pour le compte utilisateur
-shell_exec("sudo echo 'user:newpasswd' | sudo chpasswd");
+shell_exec("sudo echo '$username:$password' | sudo chpasswd");
 
 # Ajouter le compte utilisateur au groupe sudo pour accorder les privilèges de superutilisateur
 shell_exec("usermod -aG sudo $username");
