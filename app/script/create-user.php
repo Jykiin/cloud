@@ -4,10 +4,10 @@ $username = $_GET['username'];
 $password = $_GET['password'];
 
 # Créer le compte utilisateur
-shell_exec("useradd $username");
+shell_exec("useradd –m  $username");
 
 # Définir le mot de passe pour le compte utilisateur
-shell_exec("sudo $username:$password | chpasswd");
+shell_exec("sudo echo 'user:newpasswd' | sudo chpasswd");
 
 # Ajouter le compte utilisateur au groupe sudo pour accorder les privilèges de superutilisateur
 shell_exec("usermod -aG sudo $username");
