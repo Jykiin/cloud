@@ -3,7 +3,7 @@
 $username = $_GET['username'];
 $password = $_GET['password'];
 var_dump($username);
-die;
+
 # Créer le compte utilisateur
 $test = shell_exec("useradd –m  $username");
 echo($test);
