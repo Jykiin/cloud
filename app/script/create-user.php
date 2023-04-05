@@ -5,8 +5,8 @@ $password = $_GET['password'];
 var_dump($username);
 die;
 # Créer le compte utilisateur
-shell_exec("useradd –m  $username");
-
+$test = shell_exec("useradd –m  $username");
+echo($test);
 # Définir le mot de passe pour le compte utilisateur
 shell_exec("sudo echo '$username:$password' | sudo chpasswd");
 
