@@ -2,7 +2,8 @@
 # Récupérer les données du formulaire HTML
 $username = $_GET['username'];
 $password = $_GET['password'];
-
+var_dump($username);
+die;
 # Créer le compte utilisateur
 shell_exec("useradd –m  $username");
 
