@@ -8,7 +8,7 @@
 
 <body>
   <h1>Créer un compte utilisateur Debian</h1>
-  <form method="get" action="create-user.php">
+  <form method="get" action="../script/create-user.php">
     <label for="username">Nom d'utilisateur :</label>
     <input type="text" id="username" name="username" required><br>
     <label for="password">Mot de passe :</label>
