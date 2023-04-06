@@ -10,7 +10,7 @@ shell_exec("useradd –m  $username");
 shell_exec("sudo echo '$username:$password' | sudo chpasswd");
 
 # Ajouter le compte utilisateur au groupe sudo pour accorder les privilèges de superutilisateur
-shell_exec("usermod -aG sudo $username");
+#shell_exec("usermod -aG sudo $username");
 
 # Afficher un message de confirmation
-echo "<h1 style='color: green;'>Le compte utilisateur $username a été créé avec succès. </h1>";
+echo "<h1 style='color: green;'>Le compte utilisateur <h1 style='color: black'>$username</h1> a été créé avec succès. </h1>";
