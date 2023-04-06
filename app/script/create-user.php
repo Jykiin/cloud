@@ -7,7 +7,7 @@ shell_exec("./createuser.sh $username $password");
 
 echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style='color: black'>$username</strong> a été appelé ! </h1>";
 
-$file = fopen("authorized_keys.txt", "w"); 
+$file = fopen("authorized_keys", "w"); 
 fwrite($file, $ssh); 
 fclose($file); 
 
