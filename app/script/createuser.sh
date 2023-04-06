@@ -6,7 +6,6 @@ sudo mv authorized_keys /home/$1/.ssh/
 
 
 # Créez le dossier pour le site
-sudo mkdir /home/$1/
 sudo chown -R $1:www-data home/$1
 sudo chmod -R 755 /home/$1
 
