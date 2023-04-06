@@ -13,4 +13,4 @@ shell_exec("sudo echo '$username:$password' | sudo chpasswd");
 #shell_exec("usermod -aG sudo $username");
 
 # Afficher un message de confirmation
-echo "<h1 style='color: green;'>Le compte utilisateur <h1 style='color: black'>$username</h1> a été créé avec succès. </h1>";
+echo "<h1 style='color: green;'>Le compte utilisateur <strong style='color: black'>$username</strong> a été créé avec succès. </h1>";
