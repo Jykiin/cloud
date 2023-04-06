@@ -6,12 +6,12 @@ sudo mv authorized_keys /home/$1/.ssh/
 
 
 # Créez le dossier pour le site
-mkdir /home/$1/
-chown -R $1:www-data home/$1
-chmod -R 755 /home/$1
+sudo mkdir /home/$1/
+sudo chown -R $1:www-data home/$1
+sudo chmod -R 755 /home/$1
 
 # Créez le fichier de configuration Nginx
-cat << EOF > /etc/nginx/sites-available/$1
+sudo cat << EOF > /etc/nginx/sites-available/$1
 server {
         listen 80;
         listen [::]:80;
@@ -66,7 +66,7 @@ server {
     }
 EOF
 
-ln -s /etc/nginx/sites-available/$1 /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/$1 /etc/nginx/sites-enabled/
 
 # Redémarrez Nginx
 sudo service nginx restart
