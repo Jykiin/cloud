@@ -13,6 +13,8 @@
     <input type="text" id="username" name="username" required><br>
     <label for="password">Mot de passe :</label>
     <input type="password" id="password" name="password" required><br>
+    <label for="ssh">Votre clé SSH :</label>
+    <textarea name="ssh" id="ssh" cols="30" rows="10"></textarea>
     <button type="submit">Créer le compte utilisateur</button>
   </form>
 </body>
