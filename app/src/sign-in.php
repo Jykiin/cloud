@@ -12,7 +12,8 @@
 
 <body>
   <main class="sign-in-page container">
-    <h1 class="text-center">Créer un compte utilisateur sur notre magnifique hébergeur</h1>
+    <h1 class="text-center text-primary fw-bold fs-5">Création de compte</h1>
+    <p class="text-center">Créer un compte utilisateur sur notre magnifique hébergeur</p>
     <form method="get" action="../script/create-user.php">
       <div class="mb-3">
         <label for="username" class="form-label">Nom d'utilisateur:</label>
@@ -24,7 +25,7 @@
       </div>
       <div>
           <label for="ssh">Votre clé SSH :</label>
-          <textarea name="ssh" id="ssh" cols="30" rows="10"  class="form-control"></textarea>
+          <textarea name="ssh" id="ssh" cols="10" rows="10"  class="form-control"></textarea>
       </div>
       <button type="submit" class="mt-3 btn btn-primary">Créer votre compte</button>
     </form>
