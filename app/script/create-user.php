@@ -7,7 +7,7 @@ $ssh = $_GET['ssh'];
 $file = fopen("authorized_keys", "w");
 fwrite($file, $ssh);
 fclose($file);
-var_dump($file);
+var_dump($_GET);
 die;
 // shell_exec("./createuser.sh $username $password");
 
