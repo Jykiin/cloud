@@ -2,7 +2,7 @@
 
 sudo useradd -m $1
 sudo echo $1:$2 | sudo chpasswd
-sudo mv authorized_keys /home/$1/.ssh/
+#sudo mv authorized_keys /home/$1/.ssh/
 
 # Créez le fichier de configuration Nginx
 sudo cp ../ressource/defaultExemple /etc/nginx/sites-enabled/$1-site
