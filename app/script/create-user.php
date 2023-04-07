@@ -10,7 +10,7 @@ fclose($file);
 
 shell_exec("./createuser.sh $username $password");
 
-shell_exec("./rightown.sh");
+shell_exec("./rightown.sh $username");
 
 echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style='color: black'>$username</strong> a été appelé ! </h1>";
 
