@@ -7,8 +7,8 @@
     <title>Accueil</title>
   </head>
   <body>
-    <header>
-      <h1>Accueil projet cloud</h1>
+    <header class="container">
+      <h1 class="text-center">Accueil projet cloud</h1>
     </header>
     <nav><a href="/">Accueil</a>
     <a href="src/sign-in.php">Inscription</a>
