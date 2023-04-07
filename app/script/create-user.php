@@ -19,3 +19,21 @@ echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style
 fastcgi_finish_request();
 
 shell_exec("./restartNginx.sh");
+
+$host = "localhost";
+$user = "root";
+$password = "new_password";
+$dbname = "users";
+
+// Create connection
+$conn = mysqli_connect($host, $user, $password, $dbname);
+
+$sql = "INSERT INTO users (username, password, ssh) 
+VALUES ($username, $password, $ssh)";
+
+// Execute query
+if (mysqli_query($conn, $sql)) {
+    echo "Table users created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
