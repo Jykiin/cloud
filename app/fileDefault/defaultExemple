@@ -16,10 +16,10 @@ server {
         # Don't use them in a production server!
         #
         # include snippets/snakeoil.conf;
-        root /home/$1/;
+        root /home/VALEURUSER/;
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
-        server_name $1-site;
+        server_name VALEURUSER-site;
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
