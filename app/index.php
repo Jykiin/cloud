@@ -7,13 +7,16 @@
     <title>Accueil</title>
   </head>
   <body>
-    <header class="container">
-      <h1 class="text-center">Accueil projet cloud</h1>
-    </header>
-    <nav><a href="/">Accueil</a>
-    <a href="src/sign-in.php">Inscription</a>
-    <a href="src/sign-up.php">Connexion</a>
+    <div class="container w-100 flex align-items-center justify-content-center">
+      <h1 class="mt-5 text-center fw-bold text-primary fs-4">Accueil projet cloud</h1>
+      <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
+    <nav class="shadow border border-1 border-success flex flex-column gap-2 align-items-center justify-content-center">
+      <a class="my-2 btn btn-primary w-25" href="/">Accueil</a>
+      <a class="my-2 btn btn-primary w-25" href="src/sign-in.php">Inscription</a>
+      <a class="my-2 btn btn-primary w-25" href="src/sign-up.php">Connexion</a>
   </nav>
+</div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
