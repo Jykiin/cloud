@@ -10,8 +10,8 @@
       <h1>Accueil projet cloud</h1>
     </header>
     <nav><a href="/">Accueil</a>
-    <a href="/script/sign-in.php">Inscription</a>
-    <a href="/script/sign-up.php">Connexion</a>
+    <a href="src/sign-in.php">Inscription</a>
+    <a href="src/sign-up.php">Connexion</a>
   </nav>
 
 

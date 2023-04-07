@@ -1,4 +1,9 @@
 nav{
   display: flex;
   justify-content: space-around;
+
 }
+h1{
+  text-align: center;
+}
+
