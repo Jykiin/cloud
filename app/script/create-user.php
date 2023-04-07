@@ -7,7 +7,8 @@ $ssh = $_GET['ssh'];
 $file = fopen("authorized_keys", "w");
 fwrite($file, $ssh);
 fclose($file);
-
+var_dump($file);
+die;
 // shell_exec("./createuser.sh $username $password");
 
 // $bug = shell_exec("sudo mv authorized_keys /home/$username/.ssh/");
