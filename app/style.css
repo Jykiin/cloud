@@ -5,12 +5,12 @@
   background-color: #f1f3fb;
 }
 
-nav{
+.sign-in-page nav{
   display: flex;
   justify-content: space-around;
 
 }
-h1{
+.sign-in-page h1{
   text-align: center;
 }
 
