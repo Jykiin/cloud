@@ -25,7 +25,7 @@
         </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Mot de passe: </label>
-        <input type="password" id="password" name="password" class="form-control" required>
+        <input type="password" id="password" name="password" class="form-control" >
       </div>
       <div>
           <label for="ssh">Votre clé SSH :</label>
