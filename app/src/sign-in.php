@@ -19,6 +19,10 @@
         <label for="username" class="form-label">Nom d'utilisateur:</label>
         <input  type="text" id="username" name="username" aria-describedby="username" required>
       </div>
+        <div class="mb-3">
+            <label for="domainName" class="form-label">Nom de domaine:</label>
+            <div><input  type="text" id="domainName" name="domainName" aria-describedby="domainName" required><span>-groupe16.fr</span></div>
+        </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Mot de passe: </label>
         <input type="password" id="password" name="password" class="form-control" required>
