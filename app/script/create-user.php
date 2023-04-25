@@ -29,7 +29,7 @@ if ($mysqli -> connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
     exit();
 }
-$sql = "INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)";
+$sql = "INSERT INTO users (username, pwd, ssh, domain_name) VALUES (':username', ':pwd', ':ssh', ':domain_name')";
 if ($mysqli->query($sql)) {
     echo("Record inserted successfully.<br />");
 }
