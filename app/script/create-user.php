@@ -12,7 +12,7 @@ $ssh = filter_input(INPUT_POST, "ssh");
 //    'ssh' => $ssh,
 //    'domain_name' => $domain
 //));
-$mysqli = new mysqli("localhost","root","","root_info");
+$mysqli = new mysqli("localhost",$username,$password,$username);
 
 // Check connection
 if ($mysqli -> connect_errno) {
