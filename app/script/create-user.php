@@ -14,8 +14,9 @@ shell_exec("./rightown.sh $username");
 
 shell_exec("./createbdd.sh $username $password");
 
+
+fastcgi_finish_request();
+
 echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style='color: black'>$username</strong> a été appelé ! </h1>";
 
-$response = fastcgi_finish_request();
-var_dump($response);die;
 shell_exec("./restartNginx.sh");
