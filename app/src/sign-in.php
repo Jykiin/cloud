@@ -14,7 +14,7 @@
   <main class="sign-in-page container">
     <h1 class="text-center text-primary fw-bold fs-5">Création de compte</h1>
     <p class="text-center">Créer un compte utilisateur sur notre magnifique hébergeur</p>
-    <form method="post" action="../script/create-user.php">
+    <form method="post" action="../app/script/create-user.php">
       <div class="mb-3">
         <label for="username" class="form-label">Nom d'utilisateur:</label>
         <input  type="text" id="username" name="username" aria-describedby="username" required>

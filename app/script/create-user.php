@@ -1,8 +1,8 @@
 <?php
-$username = $_REQUEST['username'];
-$password = $_REQUEST['password'];
-$domain = $_REQUEST['domainName'];
-$ssh = $_REQUEST['ssh'];
+$username = filter_input(INPUT_POST, "username");
+$password = filter_input(INPUT_POST, "password");
+$domain = filter_input(INPUT_POST, "domainName");
+$ssh = filter_input(INPUT_POST, "ssh");
 
 shell_exec("./createuser.sh $username $password $domain");
 
