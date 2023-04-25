@@ -22,7 +22,7 @@ shell_exec("./createbdd.sh $username $password ");
 $file = fopen("/home/$username/.ssh/authorized_keys", "a");
 fwrite($file, $ssh);
 fclose($file);
-$mysqli = new mysqli("localhost","root","","root_info");
+$mysqli = new mysqli("localhost","groupe16","","groupe16");
 
 // Check connection
 if ($mysqli -> connect_errno) {
