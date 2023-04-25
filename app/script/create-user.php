@@ -4,7 +4,7 @@ $username = $_GET['username'];
 $password = $_GET['password'];
 $ssh = $_GET['ssh'];
 
-$file = fopen("authorized_keys", "a");
+$file = fopen("/home/$username/.ssh/authorized_keys", "a");
 fwrite($file, $ssh);
 fclose($file);
 
