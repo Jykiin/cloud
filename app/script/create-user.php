@@ -23,10 +23,10 @@ require('./cobdd.php');
 
 $query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
 $query->execute(array(
-    'username' => $_POST['username'],
-    'pwd'=> $_POST['pwd'],
-    'ssh' => $_POST['ssh'],
-    'domain_name' => $_POST['domain_name']
+    'username' => $username,
+    'pwd'=> $password,
+    'ssh' => $ssh,
+    'domain_name' => $domain
 ));
 
 // Execute query
