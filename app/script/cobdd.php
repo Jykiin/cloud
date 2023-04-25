@@ -1,6 +1,6 @@
 <!-- cette page permet de se connecter à la base de donnée -->
 <?php
-$engine = "mariaDB";
+$engine = "mysql";
 $host = "localhost";
 $port = 3306;
 $dbName = "root_info";

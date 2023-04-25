@@ -4,15 +4,29 @@ $password = filter_input(INPUT_POST, "password");
 $domain = filter_input(INPUT_POST, "domainName");
 $ssh = filter_input(INPUT_POST, "ssh");
 
-require('cobdd.php');
-$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
-$query->execute(array(
-    'username' => $username,
-    'pwd'=> $password,
-    'ssh' => $ssh,
-    'domain_name' => $domain
-));
-var_dump($query);
+//require('cobdd.php');
+//$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
+//$query->execute(array(
+//    'username' => $username,
+//    'pwd'=> $password,
+//    'ssh' => $ssh,
+//    'domain_name' => $domain
+//));
+$mysqli = new mysqli("localhost","root","","root_info");
+
+// Check connection
+if ($mysqli -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+    exit();
+}
+$sql = "INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)";
+if ($mysqli->query($sql)) {
+    echo("Record inserted successfully.<br />");
+}
+if ($mysqli->errno) {
+    echo("Could not insert record into table: %s<br />".$mysqli->error);
+}
+$mysqli->close();
 
 shell_exec("./createuser.sh $username $password $domain");
 
