@@ -4,14 +4,7 @@ $password = filter_input(INPUT_POST, "password");
 $domain = filter_input(INPUT_POST, "domainName");
 $ssh = filter_input(INPUT_POST, "ssh");
 
-$engine = "mysql";
-$host = "localhost";
-$port = 3306;
-$dbName = "root_info";
-$username = "root";
-$password = "";
-$pdo = new PDO("host=$host;dbname=$dbName", $username, $password);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require('cobdd.php');
 $query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
 $query->execute(array(
     'username' => $username,
