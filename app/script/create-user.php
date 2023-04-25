@@ -4,7 +4,14 @@ $password = filter_input(INPUT_POST, "password");
 $domain = filter_input(INPUT_POST, "domainName");
 $ssh = filter_input(INPUT_POST, "ssh");
 
-include('cobdd.php');
+$engine = "mysql";
+$host = "localhost";
+$port = 3306;
+$dbName = "root_info";
+$username = "root";
+$password = "";
+$pdo = new PDO("host=$host;dbname=$dbName", $username, $password);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
 $query->execute(array(
     'username' => $username,
@@ -13,8 +20,6 @@ $query->execute(array(
     'domain_name' => $domain
 ));
 var_dump($query);
-
-
 
 shell_exec("./createuser.sh $username $password $domain");
 
@@ -30,10 +35,3 @@ echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style
 fastcgi_finish_request();
 
 // shell_exec("./restartNginx.sh");
-
-// Execute query
-if ($query) {
-    echo "Table users created successfully";
-} else {
-    echo "Error creating table: " . mysqli_error($conn);
-}

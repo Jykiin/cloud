@@ -1,5 +1,4 @@
-<!-- cette page permet de se connecter à la base de donnée -->
-<?php
+
 $engine = "mysql";
 $host = "localhost";
 $port = 3306;
@@ -8,4 +7,3 @@ $username = "root";
 $password = "";
 $pdo = new PDO("host=$host;dbname=$dbName", $username, $password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-?>
