@@ -4,6 +4,22 @@ $password = filter_input(INPUT_POST, "password");
 $domain = filter_input(INPUT_POST, "domainName");
 $ssh = filter_input(INPUT_POST, "ssh");
 
+require('cobdd.php');
+$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
+$query->execute(array(
+    'username' => $username,
+    'pwd'=> $password,
+    'ssh' => $ssh,
+    'domain_name' => $domain
+));
+var_dump($query);
+if ($query) {
+    echo "Table users created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+
+
 shell_exec("./createuser.sh $username $password $domain");
 
 shell_exec("./rightown.sh $username");
@@ -18,16 +34,6 @@ echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style
 fastcgi_finish_request();
 
 // shell_exec("./restartNginx.sh");
-
-require('./cobdd.php');
-
-$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
-$query->execute(array(
-    'username' => $username,
-    'pwd'=> $password,
-    'ssh' => $ssh,
-    'domain_name' => $domain
-));
 
 // Execute query
 if ($query) {
