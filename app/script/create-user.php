@@ -4,7 +4,7 @@ $password = filter_input(INPUT_POST, "password");
 $domain = filter_input(INPUT_POST, "domainName");
 $ssh = filter_input(INPUT_POST, "ssh");
 
-require('cobdd.php');
+include('cobdd.php');
 $query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
 $query->execute(array(
     'username' => $username,
@@ -13,11 +13,7 @@ $query->execute(array(
     'domain_name' => $domain
 ));
 var_dump($query);
-if ($query) {
-    echo "Table users created successfully";
-} else {
-    echo "Error creating table: " . mysqli_error($conn);
-}
+
 
 
 shell_exec("./createuser.sh $username $password $domain");
