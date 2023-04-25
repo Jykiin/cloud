@@ -1,4 +1,9 @@
 <?php
+$username = $_REQUEST['username'];
+$password = $_REQUEST['password'];
+$domain = $_REQUEST['domainName'];
+$ssh = $_REQUEST['ssh'];
+
 shell_exec("./createuser.sh $username $password $domain");
 
 shell_exec("./rightown.sh $username");
