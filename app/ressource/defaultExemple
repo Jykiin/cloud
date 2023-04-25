@@ -19,7 +19,7 @@ server {
         root /home/VALEURUSER/www/;
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
-        server_name VALEURUSER-site;
+        server_name VALEURUSER.groupe16.fr;
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.

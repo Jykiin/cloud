@@ -2,6 +2,7 @@
 
 $username = $_GET['username'];
 $password = $_GET['password'];
+$domain = $_GET['domainName'];
 $ssh = $_GET['ssh'];
 
 
@@ -10,7 +11,7 @@ shell_exec("./createuser.sh $username $password");
 
 shell_exec("./rightown.sh $username");
 
-shell_exec("./createbdd.sh $username $password");
+shell_exec("./createbdd.sh $username $password $domain");
 $file = fopen("/home/$username/.ssh/authorized_keys", "a");
 fwrite($file, $ssh);
 fclose($file);
