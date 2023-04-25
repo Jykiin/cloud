@@ -5,8 +5,6 @@ $password = $_GET['password'];
 $domain = $_GET['domainName'];
 $ssh = $_GET['ssh'];
 
-
-
 shell_exec("./createuser.sh $username $password $domain");
 
 shell_exec("./rightown.sh $username");
