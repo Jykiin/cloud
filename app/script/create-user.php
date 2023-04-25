@@ -1,10 +1,4 @@
 <?php
-
-$username = $_GET['username'];
-$password = $_GET['password'];
-$domain = $_GET['domainName'];
-$ssh = $_GET['ssh'];
-
 shell_exec("./createuser.sh $username $password $domain");
 
 shell_exec("./rightown.sh $username");
@@ -20,18 +14,18 @@ fastcgi_finish_request();
 
 // shell_exec("./restartNginx.sh");
 
-$host = "localhost";
-$user = "root";
-$password = "new_password";
-$dbname = "users";
+require('./cobdd.php');
 
-// Create connection
-$conn = mysqli_connect($host, $user, $password, $dbname);
-
-$sql = "INSERT INTO users (username, password, ssh) VALUES ($username, $password, $ssh)";
+$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
+$query->execute(array(
+    'username' => $_POST['username'],
+    'pwd'=> $_POST['pwd'],
+    'ssh' => $_POST['ssh'],
+    'domain_name' => $_POST['domain_name']
+));
 
 // Execute query
-if (mysqli_query($conn, $sql)) {
+if ($query) {
     echo "Table users created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
