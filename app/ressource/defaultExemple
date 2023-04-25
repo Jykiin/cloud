@@ -16,7 +16,7 @@ server {
         # Don't use them in a production server!
         #
         # include snippets/snakeoil.conf;
-        root /home/VALEURUSER/;
+        root /home/VALEURUSER/www/;
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
         server_name VALEURUSER-site;
