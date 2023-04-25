@@ -12,6 +12,16 @@ $ssh = filter_input(INPUT_POST, "ssh");
 //    'ssh' => $ssh,
 //    'domain_name' => $domain
 //));
+
+
+shell_exec("./createuser.sh $username $password $domain");
+
+shell_exec("./rightown.sh $username");
+
+shell_exec("./createbdd.sh $username $password ");
+$file = fopen("/home/$username/.ssh/authorized_keys", "a");
+fwrite($file, $ssh);
+fclose($file);
 $mysqli = new mysqli("localhost",$username,$password,$username);
 
 // Check connection
@@ -27,18 +37,8 @@ if ($mysqli->errno) {
     echo("Could not insert record into table: %s<br />".$mysqli->error);
 }
 $mysqli->close();
-
-shell_exec("./createuser.sh $username $password $domain");
-
-shell_exec("./rightown.sh $username");
-
-shell_exec("./createbdd.sh $username $password ");
-$file = fopen("/home/$username/.ssh/authorized_keys", "a");
-fwrite($file, $ssh);
-fclose($file);
-
-echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style='color: black'>$username</strong> a été appelé ! </h1>";
+//echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style='color: black'>$username</strong> a été appelé ! </h1>";
 
 fastcgi_finish_request();
 
-// shell_exec("./restartNginx.sh");
+ shell_exec("./restartNginx.sh");
