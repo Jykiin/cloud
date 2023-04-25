@@ -22,7 +22,7 @@ shell_exec("./createbdd.sh $username $password ");
 $file = fopen("/home/$username/.ssh/authorized_keys", "a");
 fwrite($file, $ssh);
 fclose($file);
-$mysqli = new mysqli("localhost",$username,$password,$username);
+$mysqli = new mysqli("localhost","root","","root_info");
 
 // Check connection
 if ($mysqli -> connect_errno) {
@@ -34,7 +34,7 @@ if ($mysqli->query($sql)) {
     echo("Record inserted successfully.<br />");
 }
 if ($mysqli->errno) {
-    echo("Could not insert record into table: %s<br />".$mysqli->error);
+    echo("Could not insert <br />".$mysqli->error);
 }
 $mysqli->close();
 //echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style='color: black'>$username</strong> a été appelé ! </h1>";
