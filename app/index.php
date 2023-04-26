@@ -1,8 +1,8 @@
 <?php
 session_start();
 $username = $_SESSION["username"];
-echo ("test") ;
-echo $username ;
+echo ("test");
+echo $username;
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,12 +18,16 @@ echo $username ;
       <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
       <nav class="shadow border border-1 border-success flex flex-column gap-2 align-items-center justify-content-center">
       <a class="my-2 btn btn-primary w-25" href="/">Accueil</a>
+
       <?php
+
       if(!$_SESSION["username"]){
-      echo '<a class="my-2 btn btn-primary w-25" href="src/sign-in.php">Inscription</a>
+          echo '<a class="my-2 btn btn-primary w-25" href="src/sign-in.php">Inscription</a>
       <a class="my-2 btn btn-primary w-25" href="src/connexion.php">Connexion</a>';
+
       }else{
-        echo ' <a class="my-2 btn btn-primary w-25" href="src/change_pass.php">Changer MDP</a>';
+          echo ' <a class="my-2 btn btn-primary w-25" href="src/change_pass.php">Changer mon mot de passe</a>';
+          echo ' <a class="my-2 btn btn-primary w-25" href="src/logout.php">se déconnecter</a>';
       }
       ?>
 

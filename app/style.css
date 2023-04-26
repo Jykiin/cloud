@@ -27,8 +27,10 @@ body {
 
 .login-form .warning-statement {
 	text-align: center;
+	font-weight: bold;
 	color: green;
-	margin: 2px 0;
+	padding: 5px;
+	margin: 5px;
 }
 
 .login-form input {
@@ -44,7 +46,7 @@ body {
 	max-width: 425px;
 	background-color: #FFF;
 	border-radius: 10px;
-	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	box-shadow: 0 10px 20px 0 rgba(333, 333,333, .25);
 	padding: .75rem;
 }
 

@@ -21,10 +21,10 @@
 		</div>
         <div>
             <?php if(isset($_GET['error']) && $_GET['error'] === 'invalid_password') { ?>
-                       <p class="warning-statement">Votre mote de passe n'est pas bon</p>
+                       <p class="warning-statement">Votre mot de passe est invalide.</p>
                 <?php } ?>
             <?php if(isset($_GET['error']) && $_GET['error'] === 'invalid_username') { ?>
-                <p class="warning-statement"> Qui êtes vous ? Nous ne vous trouvons pas dans la base. </p>
+                <p class="warning-statement"> Qui êtes-vous ? Nous ne vous trouvons pas dans la base. </p>
             <?php } ?>
             <?php if(isset($_GET['error']) && $_GET['error'] === 'error_from_bdd') { ?>
                     <p class="warning-statement"> Nous ne trouvons pas votre nom dans la base. </p>
