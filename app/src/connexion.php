@@ -20,15 +20,8 @@
 			</h2>
 		</div>
         <div>
-<<<<<<< HEAD
-            <?php if(isset($_GET['error']) && $_GET['error'] === 'errorinvalid_password') { ?>
-                    <?php if(isset($_POST['password'])) { ?>
-                       <p>Votre mote de passe <?php $_POST['password'] ?> n'est pas bon</p>
-                    <?php } ?>
-=======
             <?php if(isset($_GET['error']) && $_GET['error'] === 'invalid_password') { ?>
                        <p class="warning-statement">Votre mote de passe n'est pas bon</p>
->>>>>>> 6d70f33720c403dc381cf6b3f082b0b4fc524a82
                 <?php } ?>
             <?php if(isset($_GET['error']) && $_GET['error'] === 'invalid_username') { ?>
                 <p class="warning-statement"> Qui êtes vous ? Nous ne vous trouvons pas dans la base. </p>
