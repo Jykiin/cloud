@@ -14,7 +14,7 @@
   <main class="sign-in-page container">
     <h1 class="text-center text-primary fw-bold fs-5">Création de compte</h1>
     <p class="text-center">Créer un compte utilisateur sur notre magnifique hébergeur</p>
-    <form method="get" action="../script/create-user.php">
+    <form method="post" action="../script/create-user.php">
       <div class="mb-3">
         <label for="username" class="form-label">Nom d'utilisateur:</label>
         <input  type="text" id="username" name="username" aria-describedby="username" required>
@@ -25,7 +25,7 @@
         </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Mot de passe: </label>
-        <input type="password" id="password" name="password" class="form-control" required>
+        <input type="password" id="password" name="password" class="form-control" >
       </div>
       <div>
           <label for="ssh">Votre clé SSH :</label>
