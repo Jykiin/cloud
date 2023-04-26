@@ -6,7 +6,7 @@ class GetUserData {
         $this->mysqli = new mysqli($host, $username, $password, $database);
 
         if ($this->mysqli->connect_errno) {
-            echo "Failed to connect to MySQL: " . $this->mysqli->connect_error;
+            echo "Echec de la connexion: " . $this->mysqli->connect_error;
             exit();
         }
     }

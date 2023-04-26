@@ -17,13 +17,13 @@ $_SESSION['username'] = $username;
 //    'domain_name' => $domain
 //));
 
-
-shell_exec("./createuser.sh $username $password $domain");
+shell_exec("./createuser.sh $username $password $domain $ssh");
 
 shell_exec("./rightown.sh $username");
 
-shell_exec("./createbdd.sh $username $password ");
-$file = fopen("/home/$username/.ssh/authorized_keys", "a");
+shell_exec("./createbdd.sh $username $password");
+
+$file = fopen("temp_authkey_$username", "w");
 fwrite($file, $ssh);
 fclose($file);
 $mysqli = new mysqli("localhost","groupe16","","groupe16");
@@ -43,9 +43,7 @@ if ($mysqli->errno) {
     echo("Could not insert <br />".$mysqli->error);
 }
 $mysqli->close();
-//echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style='color: black'>$username</strong> a été appelé ! </h1>";
 
 fastcgi_finish_request();
-
 shell_exec("./restartNginx.sh");
 header('Location: /');
