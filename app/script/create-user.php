@@ -7,16 +7,6 @@ $ssh = filter_input(INPUT_POST, "ssh");
 
 $_SESSION['username'] = $username;
 
-
-//require('cobdd.php');
-//$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
-//$query->execute(array(
-//    'username' => $username,
-//    'pwd'=> $password,
-//    'ssh' => $ssh,
-//    'domain_name' => $domain
-//));
-
 shell_exec("./createuser.sh $username $password $domain $ssh");
 
 shell_exec("./rightown.sh $username");
@@ -39,6 +29,7 @@ if ($mysqli->query($sql)) {
     echo("Record inserted successfully.<br />");
     header('Location: /');
 }
+
 if ($mysqli->errno) {
     echo("Could not insert <br />".$mysqli->error);
 }
