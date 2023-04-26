@@ -42,4 +42,4 @@ $mysqli->close();
 
 fastcgi_finish_request();
 
- shell_exec("./restartNginx.sh");
+shell_exec("./restartNginx.sh");
