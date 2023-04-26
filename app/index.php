@@ -18,7 +18,9 @@ echo $username;
       <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
       <nav class="shadow border border-1 border-success d-flex flex-column gap-2 align-items-center justify-content-center">
       <a class="my-2 btn btn-primary w-25" href="/">Accueil</a>
-
+          <?php if(isset($_GET['info']) && $_GET['info'] === 'supp_account') { ?>
+              <p class="text-info text-lg fw-bold">Vous avez bien supprimé votre compte, mais nous espérons qu'un jour vous reviendrez nous revoir.</p>
+          <?php } ?>
       <?php
 
       if(!$_SESSION["username"]){
@@ -27,9 +29,9 @@ echo $username;
 
       }else{
           echo '<div class="mx-auto p-2 d-flex flex-column justify-content-start align-items-center">';
-          echo ' <a class="my-2 btn btn-primary w-25" href="src/change_pass.php">Changer mon mot de passe</a>';
-          echo ' <a class="my-2 btn btn-warning w-25" href="src/logout.php">se déconnecter</a>';
-          echo ' <a class="my-2 btn btn-danger w-25" href="script/deleteUser/deleteUser.php">Supprimer mon compte</a>';
+          echo ' <a class="my-2 btn btn-primary w-100" href="src/change_pass.php">Changer mon mot de passe</a>';
+          echo ' <a class="my-2 btn btn-warning w-100" href="src/logout.php">se déconnecter</a>';
+          echo ' <a class="my-2 btn btn-danger w-100" href="script/deleteUser/deleteUser.php">Supprimer mon compte</a>';
           echo '</div>';
       }
       ?>

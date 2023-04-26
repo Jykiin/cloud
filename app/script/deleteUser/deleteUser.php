@@ -53,4 +53,4 @@ session_destroy();
 
 fastcgi_finish_request();
 shell_exec("../restartNginx.sh");
-header('Location: /');
+header('Location: /?info=supp_account');
