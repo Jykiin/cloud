@@ -1,10 +1,7 @@
 <?php
 session_start();
 $activeUser = $_SESSION['username'];
-if($activeUser == 'Groupe16' || 'groupe16') {
-    header('Location: /?error=supp_groupe16');
-    exit();
-}
+
 $bdd_host = "localhost";
 $bdd_username= "groupe16";
 $bdd_password = "";
@@ -12,10 +9,14 @@ $bdd_name = "groupe16";
 $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
 $userData = $getUserData->getByUserName($activeUser);
 
+if($activeUser === 'groupe16' || $userData['username'] === 'groupe16') {
+    header('Location: /?error=supp_groupe16');
+    exit();
+} else  {
+
 $username = $userData['username'];
 $password = $userData['pwd'];
 $domain = $userData['domain_name'];
-
 shell_exec("./deleteUser.sh $username $password $domain");
 
 shell_exec("./deletebdd.sh $username $password");
@@ -54,3 +55,5 @@ session_destroy();
 fastcgi_finish_request();
 shell_exec("../restartNginx.sh");
 header('Location: /?info=supp_account');
+exit();
+}

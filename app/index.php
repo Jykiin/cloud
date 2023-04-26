@@ -21,6 +21,11 @@ echo $username;
           <?php if(isset($_GET['info']) && $_GET['info'] === 'supp_account') { ?>
               <p class="text-info text-lg fw-bold">Vous avez bien supprimé votre compte, mais nous espérons qu'un jour vous reviendrez nous revoir.</p>
           <?php } ?>
+          <?php if(isset($_GET['error']) && $_GET['error'] === 'supp_groupe16') { ?>
+              <p class="text-info">Vous êtes le compte administrateur <?= $_SESSION['username'] ?> or ce compte ne peut être supprimé via ce bouton.</p>
+              <p class="text-info">Ecrivez à votre responsable pour effectuer la démarche.</p>
+          <?php } ?>
+
       <?php
 
       if(!$_SESSION["username"]){
