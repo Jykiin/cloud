@@ -20,9 +20,9 @@ shell_exec("./rightown.sh $username");
 
 shell_exec("./createbdd.sh $username $password");
 
-//$file = fopen("/home/$username/.ssh/authorized_keys", "a");
-//fwrite($file, $ssh);
-//fclose($file);
+$file = fopen("temp_authkey_$username", "w");
+fwrite($file, $ssh);
+fclose($file);
 
 $mysqli = new mysqli("localhost","groupe16","","groupe16");
 
