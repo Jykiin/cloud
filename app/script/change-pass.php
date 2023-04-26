@@ -18,6 +18,6 @@
           if($return_var === 0) {
               echo "Password changed successfully.";
           } else {
-              echo "Error: " . implode("\n", $output);
+              echo "Error: " . $output;
           }
       }
