@@ -28,24 +28,24 @@ function getConnected($username,$password) {
         $userData = $getUserData->getByUserName($username);
 
         if ($userData) {
-            if ($userData['username'] === $username && $userData['password'] === $password) {
+            if($userData['username'] === $username && $userData['password'] === $password) {
 //                $_SESSION['user'] = $username;
 
                 header('Location: /src/welcome.php');
                 exit();
 
             } else {
-                header('Location: /src/connexion.php?error=invalidpassword');
+                header('Location: /src/connexion.php?error=invalid_password');
                 exit();
             }
         } else {
             // En cas d'erreur, redirection vers la page d'erreur
-            header('Location: /src/error_page/page-erreur.php');
+            header('Location:  /src/connexion.php?error=error_in_form');
             exit();
         }
     } else {
         // En cas d'erreur, redirection vers la page d'erreur
-        header('Location: /src/error_page/page-erreur.php');
+        header('Location:  /src/connexion.php?error=no_value');
         exit();
     }
 }
