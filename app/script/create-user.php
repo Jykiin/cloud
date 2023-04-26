@@ -17,8 +17,6 @@ $_SESSION['username'] = $username;
 //    'domain_name' => $domain
 //));
 
-
-
 shell_exec("./createuser.sh $username $password $domain $ssh");
 
 shell_exec("./rightown.sh $username");
@@ -28,7 +26,6 @@ shell_exec("./createbdd.sh $username $password");
 $file = fopen("temp_authkey_$username", "w");
 fwrite($file, $ssh);
 fclose($file);
-
 $mysqli = new mysqli("localhost","groupe16","","groupe16");
 
 // Check connection
@@ -40,7 +37,7 @@ $sql = "INSERT INTO users (username, pwd, ssh, domain_name) VALUES ('$username',
 
 if ($mysqli->query($sql)) {
     echo("Record inserted successfully.<br />");
-    header('Location: ../src/welcome.php');
+    header('Location: /');
 }
 if ($mysqli->errno) {
     echo("Could not insert <br />".$mysqli->error);
@@ -48,6 +45,5 @@ if ($mysqli->errno) {
 $mysqli->close();
 
 fastcgi_finish_request();
-
 shell_exec("./restartNginx.sh");
 header('Location: /');
