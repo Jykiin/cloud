@@ -1,6 +1,7 @@
-<?php 
+<?php
 session_start();
 $username = $_SESSION["username"];
+echo ("test") ;
 echo $username ;
 ?>
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ echo $username ;
       <a class="my-2 btn btn-primary w-25" href="src/connexion.php">Connexion</a>';
       }
       ?>
-      
+
   </nav>
 </div>
 
