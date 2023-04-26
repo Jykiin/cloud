@@ -14,21 +14,23 @@ $ssh = filter_input(INPUT_POST, "ssh");
 //));
 
 
-shell_exec("./createuser.sh $username $password $domain");
+shell_exec("./createuser.sh $username $password $domain $ssh");
 
 shell_exec("./rightown.sh $username");
 
-shell_exec("./createbdd.sh $username $password ");
-$file = fopen("/home/$username/.ssh/authorized_keys", "a");
-fwrite($file, $ssh);
-fclose($file);
+shell_exec("./createbdd.sh $username $password");
+
+//$file = fopen("/home/$username/.ssh/authorized_keys", "a");
+//fwrite($file, $ssh);
+//fclose($file);
+
 $mysqli = new mysqli("localhost","groupe16","","groupe16");
 
-// Check connection
 if ($mysqli -> connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
     exit();
 }
+
 $sql = "INSERT INTO users (username, pwd, ssh, domain_name) VALUES ('$username','$password','$ssh','$domain')";
 
 if ($mysqli->query($sql)) {
@@ -38,7 +40,6 @@ if ($mysqli->errno) {
     echo("Could not insert <br />".$mysqli->error);
 }
 $mysqli->close();
-//echo "<h1 style='color: green;'>Le script pour créer le compte de <strong style='color: black'>$username</strong> a été appelé ! </h1>";
 
 fastcgi_finish_request();
 
