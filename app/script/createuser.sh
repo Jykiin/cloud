@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo useradd -m $1
+sudo useradd -m $1 -g www-data
 sudo echo $1:$2 | sudo chpasswd
 
 # Créer le fichier de configuration Nginx
