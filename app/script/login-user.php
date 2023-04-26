@@ -19,9 +19,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 function getConnected($username,$password) {
 
-    $bdd_host = "localhost:3306" ?? "localhost";
-    $bdd_username= "root" ?? "groupe16";
-    $bdd_password = "root" ?? "";
+    $bdd_host = "localhost";
+    $bdd_username= "groupe16";
+    $bdd_password = "";
     $bdd_name = "groupe16";
 
     if (isset($username)) {
