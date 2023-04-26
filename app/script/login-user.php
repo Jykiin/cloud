@@ -1,5 +1,6 @@
 <?php
 require dirname(__FILE__, 0).'getUsersData.php';
+require dirname(__FILE__, 2).'/src/connexion.php';
 
 if(isset($_POST['account_login']))  {
     $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
@@ -10,6 +11,7 @@ if(isset($_POST['account_login']))  {
     if(isset($username) && isset($password)) {
         $getUserData = new GetUserData("localhost", "groupe16", "", "groupe16");
         $userData = $getUserData->getByUserName($username);
+        var_dump($userData);
         if($userData)  {
             if($userData['username'] === $username && $userData['password'] === $password) {
                 $_SESSION['user'] = $username;
