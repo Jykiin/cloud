@@ -21,3 +21,5 @@
 
         <input type="submit" value="Change Password">
     </form>
+</body>
+</html>
