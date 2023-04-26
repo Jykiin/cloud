@@ -4,7 +4,6 @@ $password = filter_input(INPUT_POST, "password");
 $domain = filter_input(INPUT_POST, "domainName");
 $ssh = filter_input(INPUT_POST, "ssh");
 
-//require('cobdd.php');
 //$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
 //$query->execute(array(
 //    'username' => $username,
