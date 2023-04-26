@@ -1,5 +1,4 @@
 <?php
-
 class GetUserData {
     private $mysqli;
 
@@ -35,14 +34,12 @@ class GetUserData {
             } else {
                 echo "Error executing statement: " . $query->error;
             }
-
             $query->close();
 
         } else {
             echo "Error preparing statement: " . $this->mysqli->error;
         }
     }
-
 }
 
 
