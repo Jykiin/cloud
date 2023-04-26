@@ -16,7 +16,7 @@ var_dump($_POST);
 ?>
 <main class="container">
 	<div class="card">
-		<div class="card-image">	
+		<div class="card-image">
 			<h2 class="card-heading">
 				Heureux de vous revoir !
 				<small>Plus que quelques pas pour nous retrouver...</small>
