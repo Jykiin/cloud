@@ -16,7 +16,7 @@ var_dump($_POST);
 ?>
 <main class="container">
 	<div class="card">
-		<div class="card-image">
+		<div class="card-image">	
 			<h2 class="card-heading">
 				Heureux de vous revoir !
 				<small>Plus que quelques pas pour nous retrouver...</small>
@@ -24,7 +24,7 @@ var_dump($_POST);
 		</div>
         <div>
             <?php if(isset($_GET['error']) && $_GET['error'] === 'errorinvalid_password') { ?>
-                    <?php if(isset($_POST['password'])  { ?>
+                    <?php if(isset($_POST['password'])) { ?>
                        <p>Votre mote de passe <?php $_POST['password'] ?> n'est pas bon</p>
                     <?php } ?>
                 <?php } ?>
@@ -54,4 +54,5 @@ var_dump($_POST);
           integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
           crossorigin="anonymous"></script>
 </body>
+
 </html>
