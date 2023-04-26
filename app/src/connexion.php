@@ -11,9 +11,7 @@
 </head>
 
 <body class="login-form">
-<?php
-var_dump($_POST);
-?>
+
 <main class="container">
 	<div class="card">
 		<div class="card-image">
