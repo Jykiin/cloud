@@ -22,7 +22,7 @@
         <div>
 <<<<<<< HEAD
             <?php if(isset($_GET['error']) && $_GET['error'] === 'errorinvalid_password') { ?>
-                    <?php if(isset($_POST['password'])  { ?>
+                    <?php if(isset($_POST['password'])) { ?>
                        <p>Votre mote de passe <?php $_POST['password'] ?> n'est pas bon</p>
                     <?php } ?>
 =======
