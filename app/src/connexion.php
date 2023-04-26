@@ -19,17 +19,17 @@
 				<small>Plus que quelques pas pour nous retrouver...</small>
 			</h2>
 		</div>
-		<form class="card-form">
+		<form class="card-form" action="<?= dirname(__FILE__,2).'script/login-user.php' ?>">
 			<div class="input">
-				<input type="text" class="input-field" value="" required/>
-				<label class="input-label">Mon nom d'utilisateur</label>
+				<input id="username" type="text" class="input-field" value="" required/>
+				<label for="username" name="username" class="input-label">Mon nom d'utilisateur</label>
 			</div>
 						<div class="input">
-				<input type="password" class="input-field" required/>
-				<label class="input-label">Mon mot de passe</label>
+				<input id="password" type="password" class="input-field" required/>
+				<label for="password" name="password" class="input-label">Mon mot de passe</label>
 			</div>
 			<div class="action">
-				<button class="action-button">Let's go !</button>
+				<button type="submit" name='account-login' class="action-button">Let's go !</button>
 			</div>
 		</form>
 	</div>

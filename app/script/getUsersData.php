@@ -19,6 +19,7 @@ class GetUserData {
             echo "Résultats de users: " . $result -> num_rows;
             $result -> free_result();
         }
+        return $result;
     }
 
     public function getByUserName($username) {
@@ -30,11 +31,13 @@ class GetUserData {
                 $result = $query->get_result();
                 echo "Résultats de users: " . $result->num_rows;
                 $result->free();
+                return $result;
             } else {
                 echo "Error executing statement: " . $query->error;
             }
 
             $query->close();
+
         } else {
             echo "Error preparing statement: " . $this->mysqli->error;
         }
