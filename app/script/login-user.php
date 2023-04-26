@@ -1,4 +1,5 @@
 <?php
+session_start();
 require dirname(__FILE__, 0) . 'getUsersData.php';
 require dirname(__FILE__, 2) . '/src/connexion.php';
 
