@@ -39,10 +39,6 @@ class GetUserData {
             echo "Error preparing statement: " . $this->mysqli->error;
         }
     }
-
-    public function closeConnection() {
-        $this->mysqli->close();
-    }
 }
 
 
