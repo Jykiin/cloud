@@ -4,5 +4,3 @@
 sudo chmod -R 755 /home/$1/.ssh
 sudo chmod -R 775 /home/$1/www
 
-# écrire la clé ssh dans /.ssh/authorized_keys
-sudo echo $4 >> /home/$1/.ssh/authorized_keys
