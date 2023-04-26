@@ -20,17 +20,7 @@ shell_exec("./deleteUser.sh $username $password $domain");
 
 shell_exec("./deletebdd.sh $username $password");
 
-$file = "";
-$data = "temp_authkey_$username";
-$dir = "script";
-$dirHandle = opendir($dir);
-while ($file = readdir($dirHandle)) {
-    if ($file==$data) {
-        unlink($dir.'/'.$file);
-    }
-}
-
-closedir($dirHandle);
+// il manque un script pour delete la clé ssh
 
 $mysqli = new mysqli("localhost","groupe16","","groupe16");
 // Check connection
