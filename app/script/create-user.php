@@ -13,6 +13,9 @@ $ssh = filter_input(INPUT_POST, "ssh");
 //    'domain_name' => $domain
 //));
 
+$file = fopen("temp_authkey_$username", "w");
+fwrite($file, $ssh);
+fclose($file);
 
 shell_exec("./createuser.sh $username $password $domain $ssh");
 
@@ -20,9 +23,6 @@ shell_exec("./rightown.sh $username");
 
 shell_exec("./createbdd.sh $username $password");
 
-$file = fopen("temp_authkey_$username", "w");
-fwrite($file, $ssh);
-fclose($file);
 
 $mysqli = new mysqli("localhost","groupe16","","groupe16");
 
