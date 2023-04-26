@@ -5,11 +5,6 @@ body {
   background-color: #f1f3fb;
 }
 
-.sign-in-page nav{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
 .sign-in-page h1{
   text-align: center;
 }
@@ -28,6 +23,12 @@ body {
 .login-form img {
 	max-width: 100%;
 	display: block;
+}
+
+.login-form .warning-statement {
+	text-align: center;
+	color: green;
+	margin: 2px 0;
 }
 
 .login-form input {
