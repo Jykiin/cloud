@@ -36,7 +36,7 @@ echo $username;
           echo '<div class="mx-auto p-2 d-flex flex-column justify-content-start align-items-center">';
           echo ' <a class="my-2 btn btn-primary w-100" href="src/change_pass.php">Changer mon mot de passe</a>';
           echo ' <a class="my-2 btn btn-warning w-100" href="src/logout.php">se déconnecter</a>';
-          echo ' <a class="my-2 btn btn-danger w-100" href="script/deleteUser/deleteUser.php">Supprimer mon compte</a>';
+          echo ' <a class="my-2 btn btn-danger w-100" href="./script/deleteUser/deleteUser.php">Supprimer mon compte</a>';
           echo '</div>';
       }
       ?>
