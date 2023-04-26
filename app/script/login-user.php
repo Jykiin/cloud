@@ -6,8 +6,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-    $username = isset($_POST['username']) ? $_POST['username'] : null;
-    $password = isset($_POST['password']) ? $_POST['password'] : null;
+    $username = $_POST['username'] ?? null;
+    $password = $_POST['password'] ?? null;
     getConnected($username, $password);
 
 } elseif($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -18,34 +18,36 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 function getConnected($username,$password) {
 
-    $bdd_host = "localhost";
-    $bdd_username= "groupe16";
-    $bdd_password = "";
+    $bdd_host = "localhost:3306";
+    $bdd_username= "root";
+    $bdd_password = "root";
     $bdd_name = "groupe16";
 
-    if (isset($username) && isset($password)) {
+    if (isset($username)) {
         $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
         $userData = $getUserData->getByUserName($username);
 
         if ($userData) {
-            if($userData['username'] === $username && $userData['password'] === $password) {
+
+            if($userData['username'] === $username) {
 //                $_SESSION['user'] = $username;
-
-                header('Location: /src/welcome.php');
-                exit();
-
+                if($userData['pwd'] === $password)  {
+                    header('Location: ../src/welcome.php');
+                    exit();
+                } else {
+                    header('Location: ../src/connexion.php?error=invalid_password');
+                    exit();
+                }
             } else {
-                header('Location: /src/connexion.php?error=invalid_password');
+                header('Location: ../src/connexion.php?error=invalid_username');
                 exit();
             }
         } else {
-            // En cas d'erreur, redirection vers la page d'erreur
-            header('Location:  /src/connexion.php?error=error_in_form');
+            header('Location:  ../src/connexion.php?error=error_from_bdd');
             exit();
         }
     } else {
-        // En cas d'erreur, redirection vers la page d'erreur
-        header('Location:  /src/connexion.php?error=no_value');
+        header('Location:  ../src/connexion.php?error=no_value');
         exit();
     }
 }
