@@ -33,7 +33,7 @@ function getConnected($username,$password) {
             if($userData['username'] === $username) {
                 $_SESSION['username'] = $username;
                 if($userData['pwd'] === $password)  {
-                    header('Location: ../src/welcome.php');
+                    header('Location: /');
                     exit();
                 } else {
                     header('Location: ../src/connexion.php?error=invalid_password');
