@@ -22,6 +22,8 @@ echo $username ;
       if(!$_SESSION["username"]){
       echo '<a class="my-2 btn btn-primary w-25" href="src/sign-in.php">Inscription</a>
       <a class="my-2 btn btn-primary w-25" href="src/connexion.php">Connexion</a>';
+      }else{
+        echo ' <a class="my-2 btn btn-primary w-25" href="src/change_pass.php">Changer MDP</a>';
       }
       ?>
 
