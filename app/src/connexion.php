@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,16 +20,27 @@
 			</h2>
 		</div>
         <div>
+<<<<<<< HEAD
             <?php if(isset($_GET['error']) && $_GET['error'] === 'errorinvalid_password') { ?>
                     <?php if(isset($_POST['password'])  { ?>
                        <p>Votre mote de passe <?php $_POST['password'] ?> n'est pas bon</p>
                     <?php } ?>
+=======
+            <?php if(isset($_GET['error']) && $_GET['error'] === 'invalid_password') { ?>
+                       <p class="warning-statement">Votre mote de passe n'est pas bon</p>
+>>>>>>> 6d70f33720c403dc381cf6b3f082b0b4fc524a82
                 <?php } ?>
-            <?php if(isset($_GET['error']) && $_GET['error'] === 'error_in_form') { ?>
-                    <p> Il y a une erreur dans les entrées. </p>
+            <?php if(isset($_GET['error']) && $_GET['error'] === 'invalid_username') { ?>
+                <p class="warning-statement"> Qui êtes vous ? Nous ne vous trouvons pas dans la base. </p>
+            <?php } ?>
+            <?php if(isset($_GET['error']) && $_GET['error'] === 'error_from_bdd') { ?>
+                    <p class="warning-statement"> Nous ne trouvons pas votre nom dans la base. </p>
                 <?php } ?>
             <?php if(isset($_GET['error']) && $_GET['error'] === 'no_value') { ?>
-                <p> Merci d'entrer des valeurs valides. </p>
+                <p class="warning-statement"> Merci d'entrer des valeurs valides. </p>
+            <?php } ?>
+            <?php if(isset($_GET['error']) && $_GET['error'] === 'oK') { ?>
+                <p class="warning-statement"> Vous êtes connecté </p>
             <?php } ?>
         </div>
 		<form class="card-form" action="../script/login-user.php" method="post">
