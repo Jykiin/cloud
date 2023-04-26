@@ -4,7 +4,7 @@ sudo useradd -m $1 -g www-data
 sudo echo $1:$2 | sudo chpasswd
 
 # écrire la clé ssh dans /.ssh/authorized_keys
-sudo echo $4 | sudo tee --append /home/hook/.ssh/authorized_keys
+sudo echo $4 | sudo tee --append /home/$1/.ssh/authorized_keys
 
 # Créer le fichier de configuration Nginx
 sudo cp ../ressource/defaultExemple /etc/nginx/sites-enabled/$3-groupe16.fr
