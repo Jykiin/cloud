@@ -34,6 +34,7 @@ $sql = "INSERT INTO users (username, pwd, ssh, domain_name) VALUES ('$username',
 
 if ($mysqli->query($sql)) {
     echo("Record inserted successfully.<br />");
+    header('Location: ../src/welcome.php');
 }
 if ($mysqli->errno) {
     echo("Could not insert <br />".$mysqli->error);

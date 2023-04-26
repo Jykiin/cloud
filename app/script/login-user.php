@@ -30,7 +30,7 @@ function getConnected($username,$password) {
         if ($userData) {
 
             if($userData['username'] === $username) {
-//                $_SESSION['user'] = $username;
+                $_SESSION['username'] = $username;
                 if($userData['pwd'] === $password)  {
                     header('Location: ../src/welcome.php');
                     exit();
