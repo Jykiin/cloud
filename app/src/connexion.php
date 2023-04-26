@@ -11,6 +11,9 @@
 </head>
 
 <body class="login-form">
+<?php
+var_dump($_POST);
+?>
 <main class="container">
 	<div class="card">
 		<div class="card-image">	
@@ -19,22 +22,24 @@
 				<small>Plus que quelques pas pour nous retrouver...</small>
 			</h2>
 		</div>
-		<form class="card-form" action="<?= dirname(__FILE__,2).'script/login-user.php' ?>">
+		<form class="card-form" action="../script/login-user.php" method="post">
 			<div class="input">
-				<input id="username" type="text" class="input-field" value="" required/>
-				<label for="username" name="username" class="input-label">Mon nom d'utilisateur</label>
+				<input placeholder="paul" id="username" type="text" class="input-field" name="username" required/>
+				<label for="username" class="input-label">Mon nom d'utilisateur</label>
 			</div>
 						<div class="input">
-				<input id="password" type="password" class="input-field" required/>
-				<label for="password" name="password" class="input-label">Mon mot de passe</label>
+				<input id="password" type="password" class="input-field" name="password" required/>
+				<label for="password" class="input-label">Mon mot de passe</label>
 			</div>
 			<div class="action">
-				<button type="submit" name='account-login' class="action-button">Let's go !</button>
+				<button type="submit" class="action-button">Let's go !</button>
 			</div>
 		</form>
 	</div>
 </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+          crossorigin="anonymous"></script>
 </body>
 
 </html>

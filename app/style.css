@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
-.login-form body {
-	font-family: "DM Sans", sans-serif;
+body {
+  font-family: "DM Sans", sans-serif;
   background-color: #f1f3fb;
 }
 
 .sign-in-page nav{
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-
 }
 .sign-in-page h1{
   text-align: center;
