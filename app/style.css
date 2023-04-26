@@ -1,9 +1,157 @@
-nav{
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.login-form body {
+	font-family: "DM Sans", sans-serif;
+  background-color: #f1f3fb;
+}
+
+.sign-in-page nav{
   display: flex;
   justify-content: space-around;
 
 }
-h1{
+.sign-in-page h1{
   text-align: center;
+}
+
+/* login form page */
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+.login-form {
+  line-height: 1.5;
+	padding: 0 2rem;
+}
+
+.login-form img {
+	max-width: 100%;
+	display: block;
+}
+
+.login-form input {
+	appearance: none;
+	border-radius: 0;
+}
+
+.login-form .card {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
+}
+
+.login-form .card-image {
+	border-radius: 8px;
+	overflow: hidden;
+	padding-bottom: 65%;
+	background-image: url('https://images.pexels.com/photos/851555/pexels-photo-851555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-repeat: no-repeat;
+	background-size: 150%;
+	background-position: 0 5%;
+	position: relative;
+}
+
+.login-form .card-heading {
+	position: absolute;
+	left: 10%;
+	top: 15%;
+	right: 10%;
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #735400;
+	line-height: 1.222;
+}
+
+.login-form small {
+  display: block;
+  font-size: .75em;
+  font-weight: 400;
+  margin-top: .25em;
+}
+
+.login-form .card-form {
+	padding: 2rem 1rem 0;
+}
+
+.login-form .input {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+
+}
+
+.login-form .input+.input {
+  margin-top: 1.5rem;
+}
+
+.login-form .input-label {
+	color: #8597a3;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+
+.login-form .input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+
+}
+
+.login-form .input-field:focus, .input-field:valid {
+  outline: 0;
+  border-bottom-color: #6658d3;
+
+}
+
+.login-form .input-field+.input-label {
+  color: #6658d3;
+  transform: translateY(-1.5rem);
+}
+
+.login-form .action {
+	margin-top: 2rem;
+}
+
+.login-form .action-button {
+	font: inherit;
+	font-size: 1.25rem;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background-color: #6658d3;
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+}
+
+.login-form .action-button:focus {
+  outline: 0;
+}
+
+.card-info {
+	padding: 1rem 1rem;
+	text-align: center;
+	font-size: .875rem;
+	color: #8597a3;
+
+}
+
+.login-form .card-info a {
+  display: block;
+  color: #6658d3;
+  text-decoration: none;
 }
 
