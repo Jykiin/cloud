@@ -22,6 +22,9 @@ var_dump($_POST);
 				<small>Plus que quelques pas pour nous retrouver...</small>
 			</h2>
 		</div>
+        <?php if(isset($_GET['error']) && $_GET['error'] === 'errorinvalidpassword') { ?>
+               <p>Votre mote de passe <?php $_POST['password'] ?> n'est pas bon</p>
+        <?php } ?>
 		<form class="card-form" action="../script/login-user.php" method="post">
 			<div class="input">
 				<input placeholder="paul" id="username" type="text" class="input-field" name="username" required/>

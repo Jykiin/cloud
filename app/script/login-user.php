@@ -29,11 +29,14 @@ function getConnected($username,$password) {
 
         if ($userData) {
             if ($userData['username'] === $username && $userData['password'] === $password) {
-                $_SESSION['user'] = $username;
+//                $_SESSION['user'] = $username;
 
                 header('Location: /src/welcome.php');
                 exit();
 
+            } else {
+                header('Location: /src/connexion.php?error=invalidpassword');
+                exit();
             }
         } else {
             // En cas d'erreur, redirection vers la page d'erreur
