@@ -29,9 +29,9 @@ class GetUserData {
 
             if ($query->execute()) {
                 $result = $query->get_result();
-                echo "Résultats de users: " . $result->num_rows;
+                $data = $result->fetch_assoc();
                 $result->free();
-                return $result;
+                return $data;
             } else {
                 echo "Error executing statement: " . $query->error;
             }
@@ -42,6 +42,7 @@ class GetUserData {
             echo "Error preparing statement: " . $this->mysqli->error;
         }
     }
+
 }
 
 
