@@ -4,3 +4,4 @@
 sudo chown -R $1:www-data /home/$1
 sudo chmod -R 777 /home/$1
 # droit pour le fichier ssh
+# sudo chown $1:www-data /home/$1/authorized_keys
