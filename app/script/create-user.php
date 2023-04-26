@@ -1,8 +1,12 @@
 <?php
+session_start();
 $username = filter_input(INPUT_POST, "username");
 $password = filter_input(INPUT_POST, "password");
 $domain = filter_input(INPUT_POST, "domainName");
 $ssh = filter_input(INPUT_POST, "ssh");
+
+$_SESSION['username'] = $username;
+
 
 //require('cobdd.php');
 //$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
@@ -44,3 +48,4 @@ $mysqli->close();
 fastcgi_finish_request();
 
 shell_exec("./restartNginx.sh");
+header('Location: /');
