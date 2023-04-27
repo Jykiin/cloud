@@ -33,9 +33,49 @@ echo $username;
         echo ' <a class="my-2 btn btn-primary w-25" href="src/logout.php">se déconnecter</a>';
       }
       ?>
+    <?php
+          if($_SESSION["username"]){ ?>
+          <a class="my-2 btn btn-primary w-25" href="src/sign-in.php">Mes informations</a>
+              <div class="p-5 my-5 d-flex flex-column justify-content-center align-items-center">
+                  <div>
+                      <h2>Ma consommation du stockage sur espace disque</h2>
+                  </div>
+                  <div>
+                      <table class="table table-striped">
+                          <thead>
+                          <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Site web</th>
+                              <th scope="col">Taille dossier sur disque</th>
+                              <th scope="col">Taille base de donnée</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <th scope="row">1</th>
+                              <td>Marc</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                          </tr>
+                          <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div>
+                      <h2>Graphiques de consommation</h2>
+                  </div>
 
     </nav>
   </div>
+              </div>
+         <?php } ?>
+  </nav>
+</div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
