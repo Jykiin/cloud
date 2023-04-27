@@ -1,7 +1,5 @@
 <?php
 session_start();
-$username = $_SESSION["username"];
-echo $username;
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,6 +20,10 @@ echo $username;
       <div class="mb-3">
         <label for="domainName" class="form-label">Nom de domaine:</label>
         <div><input type="text" id="domainName" name="domainName" aria-describedby="domainName" required><span>-groupe16.fr</span></div>
+      </div>
+      <div class="mb-3">
+        <label for="domainName" class="form-label">Mot de passe de la BDD</label>
+        <div><input type="password" id="password" name="password" aria-describedby="password" required></div>
       </div>
       <button type="submit" class="mt-3 btn btn-primary">Créer votre site et sa BDD</button>
     </form>
