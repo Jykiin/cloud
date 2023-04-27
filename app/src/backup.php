@@ -11,6 +11,8 @@ $backup_files = array_diff(scandir($BACKUP_DIR), array('..', '.'));
 foreach ($backup_files as $file) {
     if (strpos($file, $_SESSION['username']) !== false) {
         echo "<a href='/src/download.php?file=$file'>$file</a><br>";
+    }else{
+        echo "vous navez pas encore de backup !";
     }
 }
 

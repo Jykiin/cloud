@@ -15,8 +15,10 @@ if (file_exists("$BACKUP_DIR/$file")) {
     header('Pragma: public');
     header('Content-Length: ' . filesize("$BACKUP_DIR/$file"));
     readfile("$BACKUP_DIR/$file");
+    ob_clean();
+    flush();
     exit;
 } else {
-    echo "Le backup n'existe po.";
+    echo "Pas de backup";
 }
 
