@@ -51,12 +51,13 @@ echo $username;
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur le ou les site(s) web pour obtenir vos données de consommations.</p>';
                           foreach($domains as $domain):
                               if($domain['username'] === $_SESSION['username']): ?>
+
                               <div class="list-group">
-                                  <a href="script/infoConsoSite.php/?domain=<?=$domain['domain_name']?>" class="my-1 list-group-item list-group-item-action bg-success text-white fw-bold border border-0">
+                                  <a href="script/infoConsoSite.php?domain=<?php echo urlencode($domain['domain_name']) ?>" class="my-1 list-group-item list-group-item-action bg-success text-white fw-bold border border-0">
                                       <?= $domain['domain_name'] ?>
                                   </a>
-
                               </div>
+
                               <?php endif ?>
                           <?php endforeach ?>
                           <h3>Domaine de mon site web: <span class="text-success fw-bold"><?= $domains['domain_name'] ?></span></h3>

@@ -1,8 +1,22 @@
 <?php
 session_start();
 require dirname(__FILE__, 0) . 'getUsersData.php';
-
 $username = $_SESSION['username'];
+$user_bdd_name = "";
+$user_bdd_username = "";
+
+if (isset($_GET['domain'])) {
+    $domain = $_GET['domain'];
+    if($domain === $_SESSION['username'])  {
+        $user_bdd_name = $username;
+        $user_bdd_username = $username;
+    } else  {
+        $user_bdd_name = $username."-2";
+        $user_bdd_username = $username."-2";
+    }
+} else {
+    header('Location /?error=no_domain');
+}
 
 $bdd_host = "localhost";
 $bdd_username= "groupe16";
@@ -10,7 +24,6 @@ $bdd_password = "";
 $bdd_name = "groupe16";
 
 $username_folder = $username;
-$user_bdd_name = $username;
 $user_bdd_password = "";
 
 $userSiteSize = "étoile";
@@ -30,8 +43,8 @@ $dossier_utilisateur = shell_exec("./info_conso_site.sh $username_folder");
     $userSiteSize = $dossier_utilisateur;
 }
 # récupération de la taille de la base de données utilisateur
-if(!empty($username) && !empty($user_bdd_name) && !empty($user_bdd_password))  {
-    $db_utilisateur = shell_exec("./info_conso_bdd.sh $username $user_bdd_name $user_bdd_password");
+if(!empty($user_bdd_username) && !empty($user_bdd_name) && !empty($user_bdd_password))  {
+    $db_utilisateur = shell_exec("./info_conso_bdd.sh $user_bdd_username $user_bdd_name $user_bdd_password");
     $userBddSize = $db_utilisateur." MB";
 }
 
