@@ -15,10 +15,6 @@
     <h1 class="text-center text-primary fw-bold fs-5">Création d'un site</h1>
     <form method="post" action="../script/new-site.php">
       <div class="mb-3">
-        <label for="username" class="form-label">Nom d'utilisateur:</label>
-        <input type="text" id="username" name="username" aria-describedby="username" required>
-      </div>
-      <div class="mb-3">
         <label for="domainName" class="form-label">Nom de domaine:</label>
         <div><input type="text" id="domainName" name="domainName" aria-describedby="domainName" required><span>-groupe16.fr</span></div>
       </div>
