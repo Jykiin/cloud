@@ -1,7 +1,9 @@
 
     <?php
+
       // Get the form data
-      $username = "reewaz";
+      session_start();
+      $username = $_SESSION["username"];
       $oldpassword = $_POST['oldpassword'];
       $newpassword = $_POST['newpassword'];
       $confirmpassword = $_POST['confirmpassword'];
