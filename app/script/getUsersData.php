@@ -48,14 +48,15 @@ class GetUserData {
 
     public function getDomainsByUserName($username) {
         $sql = "SELECT domain_name FROM users WHERE username = ?";
+        $domains = array();
         if ($querydomain = $this->mysqli->prepare($sql)) {
             $querydomain->bind_param("s", $username);
 
             if ($querydomain->execute()) {
                 $result = $querydomain->get_result();
-                $data = $result->fetch_assoc();
-                $result->free();
-                return $data;
+                while ($row = $result->fetch_assoc()) {
+                    $domains[] = $row['domain_name'];
+                }
             } else {
                 echo "Error executing statement: " . $querydomain->error;
             }
@@ -64,6 +65,8 @@ class GetUserData {
         } else {
             echo "Error preparing statement: " . $this->mysqli->error;
         }
+
+        return $domains;
     }
 
     public function insertNewUser($username, $password,$ssh,$domain){
