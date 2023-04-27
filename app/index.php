@@ -56,7 +56,7 @@ echo $username;
                               </div>
                           <?php endforeach ?>
                       <?php else: ?>
-                          <h3>Domaine de mon site web: <span class="text-success fw-bold"><?= $domains ?></span></h3>
+                          <h3>Domaine de mon site web: <span class="text-success fw-bold"><?= $domains['domain_name'] ?></span></h3>
                           <h4>Ma consommation d'espace disque sur ce site web:</h4>
                           <a class="my-2 btn btn-success w-50 fw-bold text-white" href="script/infoConsoSite.php"> Générer mes données</a>
                       <?php endif ?>
