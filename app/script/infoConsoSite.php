@@ -6,6 +6,10 @@ $bdd_host = "localhost";
 $bdd_username= "groupe16";
 $bdd_password = "";
 $bdd_name = "groupe16";
+$getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
+$userData = $getUserData->getByUserName($username);
+var_dump($userData);
+
 
 $username_folder = null;
 $user_bdd_name = null;
