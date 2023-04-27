@@ -42,8 +42,10 @@ echo $username;
 
                       <h3>Mes sites web</h3>
                       <p>Cliquez sur un des sites web pour obtenir vos données de consommations.</p>
+
                       <?php
                       $domains = getUserDataFromBDD($_SESSION['username'], 'domain');
+                      var_dump($domains);
                       foreach($domains as $domain): ?>
                           <div class="list-group">
                               <a href="script/infoConsoSite.php" class="list-group-item list-group-item-action">
