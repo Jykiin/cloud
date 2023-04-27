@@ -68,13 +68,14 @@ echo $username;
                           </table>
                       </div>
                   <?php } ?>
+                  <?php if(isset($_GET['error_data']) && $_GET['error_data'] === 'invalid_values')  { ?>
+                      <p class="warning-statement fw-bold text-lg text-danger">Une erreur s'est produite lors de la génération des données.</p>
+                      <p class="warning-statement fw-bold">Contacter le service client pour avoir plus d'information</p>
+                  <?php }  ?>
 
               </div>
          <?php } ?>
-      <?php if(isset($_GET['error_data']) && $_GET['error_data'] === 'invalid_values')  { ?>
-          <p class="warning-statement fw-bold text-lg text-danger">Une erreur s'est produite lors de la génération des données.</p>
-          <p class="warning-statement fw-bold">Contacter le service client pour avoir plus d'information</p>
-      <?php }  ?>
+
   </nav>
 </div>
 
