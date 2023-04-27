@@ -1,8 +1,7 @@
 <?php
-session_start();
 require dirname(__FILE__, 0) . 'getUsersData.php';
-$username = $_SESSION['username'];
-
+$username = 'amaury';
+var_dump('ici');
 //$bdd_host = "localhost";
 //$bdd_username= "groupe16";
 //$bdd_password = "";
@@ -24,7 +23,7 @@ $userBddSize = "";
 
 
 # récupération de la taille du dossier utilisateur
-$username_folder = $_SESSION['username'];
+$username_folder = 'amaury';
 $dossier_utilisateur = shell_exec("./info_conso_site.sh $username_folder");
 
 //# récupération de la taille de la base de données utilisateur
