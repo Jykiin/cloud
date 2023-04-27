@@ -28,6 +28,7 @@ echo $username;
               }else{
                   echo ' <a class="my-2 btn btn-primary" href="src/change_pass.php">Changer mon mot de passe</a>';
                   echo ' <a class="my-2 btn btn-primary" href="src/logout.php">se déconnecter</a>';
+                  echo ' <a class="my-2 btn btn-danger" href="src/backup.php">télécharger backup</a>';
               }
               ?>
           </div>
