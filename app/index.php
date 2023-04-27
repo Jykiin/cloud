@@ -18,12 +18,12 @@ echo $username;
       <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
       <nav class="shadow p-5 d-flex flex-column gap-2 align-items-center justify-content-center">
           <div class="d-flex flex-column gap-2 align-items-center justify-content-center">
-              <a class="my-2 btn btn-primary w-50" href="/">Accueil</a>
+              <a class="my-2 btn btn-primary" href="/">Accueil</a>
               <?php
 
               if(!$_SESSION["username"]){
                   echo '<a class="my-2 btn btn-primary" href="src/sign-in.php">Inscription</a>
-      <a class="my-2 btn btn-primary w-50" href="src/connexion.php">Connexion</a>';
+                        <a class="my-2 btn btn-primary" href="src/connexion.php">Connexion</a>';
 
               }else{
                   echo ' <a class="my-2 btn btn-primary" href="src/change_pass.php">Changer mon mot de passe</a>';
