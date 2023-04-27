@@ -40,11 +40,11 @@ echo $username;
               <div class="d-flex flex-column justify-content-center align-items-center">
                   <div class="p-2 d-flex flex-column justify-content-center align-items-center gap-1">
 
-                      <h3 class="text-primary">Mes sites web</h3>
                       <?php
                       $domains = getUserDataFromBDD($_SESSION['username'], 'domain');
                       var_dump($domains);
                       if($domains > 1):
+                          echo '<h4> Mes sites webs </h4>';
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur un des sites web pour obtenir vos données de consommations.</p>';
                           foreach($domains as $domain): ?>
                               <div class="list-group">
