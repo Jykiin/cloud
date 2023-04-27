@@ -2,12 +2,15 @@
 session_start();
 require dirname(__FILE__, 0) . 'getUsersData.php';
 $username = $_SESSION['username'];
+
 $bdd_host = "localhost";
 $bdd_username= "groupe16";
 $bdd_password = "";
 $bdd_name = "groupe16";
+
 $username_folder = null;
-$bdd_name = null;
+$user_bdd_name = null;
+
 $userSiteSize = "";
 $userBddSize = "";
 
@@ -19,12 +22,12 @@ if (isset($username)) {
     $bdd_name = $userData['username'];
 }
 
-if(isset($username) && isset($username_folder) && isset($bdd_name)) {
+if(isset($username) && isset($username_folder) && isset($user_bdd_name)) {
 # récupération de la taille du dossier utilisateur
 $dossier_utilisateur = shell_exec("./info_conso_site.sh $username_folder");
 
 # récupération de la taille de la base de données utilisateur
-$db_utilisateur = shell_exec("./info_conso_bdd.sh $username $bddname");
+$db_utilisateur = shell_exec("./info_conso_bdd.sh $username $user_bdd_name");
 
 function consoData($dossier_utilisateur, $db_utilisateur) {
     $user_datas = [];
