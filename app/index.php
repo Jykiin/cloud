@@ -41,7 +41,9 @@ echo $username;
                       <a class="my-2 btn btn-success w-50 fw-bold text-white" href="script/infoConsoSite.php"> Générer mes données</a>
                   </div>
                   <?php if(!isset($_GET['user_site_size']) || !isset($_GET['user_bdd_size'])) { ?>
+                          <?php if(!isset($_GET['error_data'])) { ?>
                       <p class="warning-statement fw-bold text-lg"> Aucune données n'est disponible </p>
+                      <?php } ?>
                   <?php } else { ?>
                       <div>
                           <table class="table table-striped">
