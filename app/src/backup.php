@@ -9,7 +9,7 @@ $backup_files = array_diff(scandir($BACKUP_DIR), array('..', '.'));
 
 // Affichage de la liste backups
 foreach ($backup_files as $file) {
-    if (strpos($file, "marco") !== false) {
+    if (strpos($file, $_SESSION['username']) !== false) {
         echo "<a href='/src/download.php?file=$file'>$file</a><br>";
     }
 }
