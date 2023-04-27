@@ -14,8 +14,8 @@ $domain = filter_input(INPUT_POST, "domainName");
 $domain = htmlspecialchars($domain);
 $password = $userData['pwd'];
 $ssh = $userData['ssh'];
-$username2 = $username."-2";
-var_dump($username2);die;
+$username2 = $username."_2";
+
 shell_exec("./create-site.sh $username $domain");
 shell_exec("./createbdd.sh $username2 $password");
 
