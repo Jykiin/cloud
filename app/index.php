@@ -38,7 +38,7 @@ echo $username;
 
     <?php
           if($_SESSION["username"]){ ?>
-          <h2 class="my-2 btn btn-primary w-25" href="src/sign-in.php">Mes informations</h2>
+          <h2 class="my-2 text-info fw-bold text-center" href="src/sign-in.php">Mes informations</h2>
               <div class="p-5 my-5 d-flex flex-column justify-content-center align-items-center">
                   <div class="p-2 d-flex flex-column justify-content-center align-items-center gap-1">
                       <h3>Ma consommation d'espace disque</h3>
