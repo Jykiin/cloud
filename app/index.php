@@ -53,7 +53,7 @@ echo $username;
                           foreach($domains as $domain):
                               if($domain['username'] === $_SESSION['username']): ?>
                               <div class="list-group">
-                                  <a href="script/infoConsoSite.php/?domain=<?=$domain?>" class="list-group-item list-group-item-action">
+                                  <a href="script/infoConsoSite.php/?domain=<?=$domain['domain_name']?>" class="list-group-item list-group-item-action">
                                       <?= $domain ?>
                                   </a>
                               </div>
