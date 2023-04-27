@@ -44,6 +44,7 @@ echo $username;
                       $username = $_SESSION['username'];
                       $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
                       $domains = $getUserData->getUsers();
+                      var_dump($domains);
                       var_dump($domains['domain_name']);
                       var_dump(count($domains));
                       if(count($domains['domain_name']) > 1):
