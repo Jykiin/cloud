@@ -8,7 +8,6 @@ $BACKUP_DIR = "/home/backup";
 $backup_files = array_diff(scandir($BACKUP_DIR), array('..', '.'));
 
 // Affichage de la liste backups
-var_dump($backup_files);die;
 foreach ($backup_files as $file) {
     if (strpos($file, $_SESSION['username']) !== false) {
         echo "<a href='/src/download.php?file=$file'>$file</a><br>";
