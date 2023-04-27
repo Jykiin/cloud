@@ -7,16 +7,6 @@ $ssh = filter_input(INPUT_POST, "ssh");
 
 $_SESSION['username'] = $username;
 
-
-//require('cobdd.php');
-//$query = $pdo->prepare("INSERT INTO users (username, pwd, ssh, domain_name) VALUES (:username, :pwd, :ssh, :domain_name)");
-//$query->execute(array(
-//    'username' => $username,
-//    'pwd'=> $password,
-//    'ssh' => $ssh,
-//    'domain_name' => $domain
-//));
-
 $file = fopen("temp_authkey_$username", "w");
 fwrite($file, $ssh);
 fclose($file);
