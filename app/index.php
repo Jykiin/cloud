@@ -44,7 +44,7 @@ echo $username;
                       $username = $_SESSION['username'];
                       $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
                       $domains = $getUserData->getDomainsByUserName($username);
-                      var_dump($domains);
+                      var_dump(count($domains));
                       if(count($domains) > 1):
                           echo '<h4> Mes sites webs </h4>';
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur un des sites web pour obtenir vos données de consommations.</p>';

@@ -12,13 +12,16 @@ class GetUserData {
     }
 
     public function getUsers() {
-        $sql = "SELECT * FROM users";
-
-        if ($result = $this->mysqli->query($sql)) {
-            echo "Résultats de users: " . $result -> num_rows;
-            $result -> free_result();
+        $sql = "SELECT username, domain_name, pwd FROM users";
+        $data = "";
+        if ($query = $this->mysqli->query($sql)) {
+            echo "Résultats de users: " . $query -> num_rows;
+            $result = $query->get_result();
+            $data = $result->fetch_assoc();
+            $result->free();
+            return $data;
         }
-        return $result;
+        return $data;
     }
 
     public function getByUserName($username) {
