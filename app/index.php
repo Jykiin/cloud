@@ -44,7 +44,7 @@ echo $username;
                   </div>
                   <?php if(!isset($_GET['user_site_size']) || !isset($_GET['user_bdd_size'])) { ?>
                       <p class="warning-statement fw-bold text-lg"> Aucune données n'est disponible </p>
-                  <?php } elseif(isset($_GET['error_data']))  { ?>
+                  <?php } elseif(isset($_GET['error_data']) && $_GET['error_data'] === 'invalid_values')  { ?>
                       <p class="warning-statement fw-bold text-lg text-danger">Une erreur s'est produite lors de la génération des données.</p>
                       <p class="warning-statement fw-bold">Contacter le service client pour avoir plus d'information</p>
                   <?php } else { ?>
