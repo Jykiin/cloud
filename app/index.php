@@ -13,10 +13,10 @@ echo $username;
     <title>Accueil</title>
   </head>
   <body>
-    <div class="container w-100 flex align-items-center justify-content-center">
+    <div class="container w-100 d-flex flex-column align-items-center justify-content-center">
       <h1 class="mt-5 text-center fw-bold text-primary fs-4">Accueil projet cloud</h1>
       <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
-      <nav class="shadow border border-1 border-success flex flex-column gap-2 align-items-center justify-content-center">
+      <nav class="shadow border border-1 border-success d-flex flex-column gap-2 align-items-center justify-content-center">
       <a class="my-2 btn btn-primary w-25" href="/">Accueil</a>
 
       <?php
