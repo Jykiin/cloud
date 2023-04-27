@@ -1,4 +1,4 @@
-<?php //phpinfo()
+<?php 
 session_start();
 
 // Variables
