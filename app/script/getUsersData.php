@@ -60,6 +60,25 @@ class GetUserData {
             echo "Error preparing statement: " . $this->mysqli->error;
         }
     }
+
+    public function insertNewUser($username, $password,$ssh,$domain){
+
+        if ($this->mysqli->connect_errno) {
+            echo "Failed to connect to MySQL: " . $this->mysqli -> connect_error;
+            exit();
+        }
+        $sql = "INSERT INTO users (username, pwd, ssh, domain_name) VALUES ('$username','$password','$ssh','$domain')";
+
+        if ($this->mysqli->query($sql)) {
+            echo("Record inserted successfully.<br />");
+            header('Location: /');
+        }
+        if ($this->mysqli->errno) {
+            echo("Could not insert <br />".$this->mysqli->error);
+        }
+        $this->mysqli->close();
+    }
+
 }
 
 

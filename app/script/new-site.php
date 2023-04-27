@@ -13,8 +13,12 @@ $userData = $getUserData->getByUserName($username);
 $domain = filter_input(INPUT_POST, "domainName");
 $domain = htmlspecialchars($domain);
 $password = $userData['pwd'];
+$ssh = $userData['ssh'];
+
 shell_exec("./create-site.sh $username $domain");
 shell_exec("./createbdd.sh $username-2 $password");
+
+$getUserData->insertNewUser($username,$password,$ssh,$domain);
 fastcgi_finish_request();
 header('Location: /');
 shell_exec("./restartNginx.sh");
