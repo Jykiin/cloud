@@ -47,18 +47,20 @@ echo $username;
                       var_dump($domains);
                       var_dump($domains['domain_name']);
                       var_dump(count($domains));
-                      if(count($domains['domain_name']) > 1):
+                      if(count($domains) > 1):
                           echo '<h4> Mes sites webs </h4>';
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur un des sites web pour obtenir vos données de consommations.</p>';
-                          foreach($domains['domain_name'] as $domain): ?>
+                          foreach($domains as $domain):
+                              if($domain['username'] === $_SESSION['username']): ?>
                               <div class="list-group">
                                   <a href="script/infoConsoSite.php/?domain=<?=$domain?>" class="list-group-item list-group-item-action">
                                       <?= $domain ?>
                                   </a>
                               </div>
+                              <?php endif ?>
                           <?php endforeach ?>
                       <?php else: ?>
-                          <h3>Domaine de mon site web: <span class="text-success fw-bold"><?= $domains ?></span></h3>
+                          <h3>Domaine de mon site web: <span class="text-success fw-bold"><?= $domains['domain_name'] ?></span></h3>
                           <h4>Ma consommation d'espace disque sur ce site web:</h4>
                           <a class="my-2 btn btn-success w-50 fw-bold text-white" href="script/infoConsoSite.php"> Générer mes données</a>
                       <?php endif ?>
