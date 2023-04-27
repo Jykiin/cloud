@@ -52,10 +52,10 @@ echo $username;
                           foreach($domains as $domain):
                               if($domain['username'] === $_SESSION['username']): ?>
                               <div class="list-group">
-                                  <a href="script/infoConsoSite.php/?domain=<?=$domain['domain_name']?>" class="list-group-item list-group-item-action">
+                                  <a href="script/infoConsoSite.php/?domain=<?=$domain['domain_name']?>" class="my-2 list-group-item list-group-item-action w-100 bg-success border-0">
                                       <?= $domain['domain_name'] ?>
                                   </a>
-                                  <a class="my-2 btn btn-success w-50 fw-bold text-white" href="script/infoConsoSite.php"> Générer mes données</a>
+
                               </div>
                               <?php endif ?>
                           <?php endforeach ?>
