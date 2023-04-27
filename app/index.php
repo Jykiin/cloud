@@ -28,7 +28,7 @@ echo $username;
               echo ' <a class="my-2 btn btn-primary" href="src/change_pass.php">Changer mon mot de passe</a>';
               echo ' <a class="my-2 btn btn-primary" href="src/logout.php">se déconnecter</a>';
               echo ' <a class="my-2 btn btn-warning" href="src/backup.php">télécharger backup</a>';
-              echo ' <a class="my-2 btn btn-primary w-25" href="src/second-site.php">Créer un second site</a>';
+              echo ' <a class="my-2 btn btn-primary" href="src/second-site.php">Créer un second site</a>';
           }
               ?>
           </div>
