@@ -76,8 +76,6 @@ echo $username;
                       <p class="warning-statement fw-bold">Contacter le service client pour avoir plus d'information</p>
                   <?php }  ?>
 
-    </nav>
-  </div>
               </div>
          <?php } ?>
 
