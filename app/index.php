@@ -44,9 +44,6 @@ echo $username;
                       $username = $_SESSION['username'];
                       $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
                       $domains = $getUserData->getUsers();
-                      var_dump($domains);
-                      var_dump($domains['domain_name']);
-                      var_dump(count($domains));
                           echo '<h4> Site(s) web sur mon compte: </h4>';
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur le ou les site(s) web pour obtenir vos données de consommations.</p>';
                           foreach($domains as $domain):
