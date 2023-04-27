@@ -1,7 +1,7 @@
 <?php
 require dirname(__FILE__, 0) . 'getUsersData.php';
 $username = 'gustave';
-var_dump('ici');
+
 //$bdd_host = "localhost";
 //$bdd_username= "groupe16";
 //$bdd_password = "";
@@ -32,8 +32,6 @@ $userBddSize = "lapin";
 $userSiteSize = $dossier_utilisateur;
 
 if(!empty($username_folder))  {
-    fastcgi_finish_request();
-    shell_exec("./restartNginx.sh");
     header("Location: /?user_site_size=" . urlencode($userSiteSize)."&user_bdd_size=". urlencode($userBddSize));
     exit();
 } else {
