@@ -19,7 +19,7 @@ if (isset($username)) {
     $userData = $getUserData->getByUserName($username);
 
     $username_folder = $userData['username'];
-    $bdd_name = $userData['username'];
+    $user_bdd_name = $userData['username'];
 }
 
 if(isset($username) && isset($username_folder) && isset($user_bdd_name)) {
