@@ -15,7 +15,6 @@ class GetUserData {
         $sql = "SELECT username, domain_name, pwd FROM users";
         $data = "";
         if ($query = $this->mysqli->query($sql)) {
-            echo "Résultats de users: " . $query -> num_rows;
             $result = $query->get_result();
             $data = $result->fetch_assoc();
             $result->free();
