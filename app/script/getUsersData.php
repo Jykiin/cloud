@@ -40,6 +40,26 @@ class GetUserData {
             echo "Error preparing statement: " . $this->mysqli->error;
         }
     }
+
+    public function getDomainsByUserName($username) {
+        $sql = "SELECT domain_name FROM users WHERE username = ?";
+        if ($querydomain = $this->mysqli->prepare($sql)) {
+            $querydomain->bind_param("s", $username);
+
+            if ($querydomain->execute()) {
+                $result = $querydomain->get_result();
+                $data = $result->fetch_assoc();
+                $result->free();
+                return $data;
+            } else {
+                echo "Error executing statement: " . $querydomain->error;
+            }
+            $querydomain->close();
+
+        } else {
+            echo "Error preparing statement: " . $this->mysqli->error;
+        }
+    }
 }
 
 

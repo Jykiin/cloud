@@ -1,7 +1,7 @@
 <?php
 session_start();
 $username = $_SESSION["username"];
-require_once __DIR__.'/script/getWebsites.php';
+require_once __DIR__. '/script/getUsersData.php';
 echo ("test");
 echo $username;
 ?>
@@ -41,14 +41,16 @@ echo $username;
                   <div class="p-2 d-flex flex-column justify-content-center align-items-center gap-1">
 
                       <?php
-                      $domains = getUserDataFromBDD($_SESSION['username'], 'domain');
+                      $username = $_SESSION['username'];
+                      $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
+                      $domains = $getUserData->getDomainsByUserName($username);
                       var_dump($domains);
                       if($domains > 1):
                           echo '<h4> Mes sites webs </h4>';
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur un des sites web pour obtenir vos données de consommations.</p>';
                           foreach($domains as $domain): ?>
                               <div class="list-group">
-                                  <a href="script/infoConsoSite.php" class="list-group-item list-group-item-action">
+                                  <a href="script/infoConsoSite.php/?domain=<?=$domain?>" class="list-group-item list-group-item-action">
                                       <?= $domain ?>
                                   </a>
                               </div>
