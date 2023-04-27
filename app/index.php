@@ -45,19 +45,15 @@ echo $username;
                       $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
                       $userData = $getUserData->getDomainsByUserName($username);
                       var_dump($userData);
-                      $domains = $getUserData->getUsers();
+                      $domains = $getUserData->getDomainsByUserName($username);
                           echo '<h4> Site(s) web sur mon compte: </h4>';
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur le ou les site(s) web pour obtenir vos données de consommations.</p>';
-                          foreach($domains as $domain):
-                              if($domain['username'] === $_SESSION['username']): ?>
-
+                          foreach($domains as $domain): ?>
                               <div class="list-group">
-                                  <a href="script/infoConsoSite.php?domain=<?php echo urlencode($domain['domain_name']) ?>" class="my-1 list-group-item list-group-item-action bg-success text-white fw-bold border border-0">
-                                      <?= $domain['domain_name'] ?>
+                                  <a href="script/infoConsoSite.php?domain=<?php echo urlencode($domain) ?>" class="my-1 list-group-item list-group-item-action bg-success text-white fw-bold border border-0">
+                                      <?= $domain ?>
                                   </a>
                               </div>
-
-                              <?php endif ?>
                           <?php endforeach ?>
                           <h4>Ma consommation par site(s) web:</h4>
                   </div>
