@@ -57,7 +57,6 @@ echo $username;
 
                               <?php endif ?>
                           <?php endforeach ?>
-                          <h3>Domaine de mon site web: <span class="text-success fw-bold"><?= $domains['domain_name'] ?></span></h3>
                           <h4>Ma consommation par site(s) web:</h4>
                   </div>
                   <?php if(!isset($_GET['user_site_size']) || !isset($_GET['user_bdd_size'])) { ?>
