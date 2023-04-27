@@ -1,6 +1,7 @@
 <?php
 session_start();
 $username = $_SESSION["username"];
+require_once __DIR__.'/script/getWebsites.php';
 echo ("test");
 echo $username;
 ?>
@@ -38,12 +39,24 @@ echo $username;
           <h2 class="mt-5 mb-1 text-info fw-bold text-center" href="src/sign-in.php">Mes informations</h2>
               <div class="d-flex flex-column justify-content-center align-items-center">
                   <div class="p-2 d-flex flex-column justify-content-center align-items-center gap-1">
+
+                      <h3>Mes sites web</h3>
+                      <p>Cliquez sur un des sites web pour obtenir vos données de consommations.</p>
+                      <?php
+                      $domains = getUserDataFromBDD($_SESSION['username'], 'domain');
+                      foreach($domains as $domain): ?>
+                          <div class="list-group">
+                              <a href="script/infoConsoSite.php" class="list-group-item list-group-item-action">
+                                  <?= $domain ?>
+                              </a>
+                          </div>
+                      <?php endforeach ?>
                       <h3>Ma consommation d'espace disque</h3>
-                      <a class="my-2 btn btn-success w-50 fw-bold text-white" href="script/infoConsoSite.php"> Générer mes données</a>
+<!--                      <a class="my-2 btn btn-success w-50 fw-bold text-white" href="script/infoConsoSite.php"> Générer mes données</a>-->
                   </div>
                   <?php if(!isset($_GET['user_site_size']) || !isset($_GET['user_bdd_size'])) { ?>
                           <?php if(!isset($_GET['error_data'])) { ?>
-                      <p class="warning-statement fw-bold text-lg"> Aucune données n'est disponible </p>
+                      <p class="warning-statement fw-bold text-lg"> Aucune donnée n'est disponible pour l'instant.</p>
                       <?php } ?>
                   <?php } else { ?>
                       <div>

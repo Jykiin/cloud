@@ -1,5 +1,4 @@
 <?php
-// Get the form data
 session_start();
 $username = $_SESSION["username"];
 $oldpassword = $_POST['oldpassword'];

@@ -16,14 +16,11 @@ session_start();
 <body>
   <main class="sign-in-page container">
     <h1 class="text-center text-primary fw-bold fs-5">Création d'un site</h1>
+      <p class="text-left text-center text-info fw-semibold fs-6">Notez que vous gardez le même espace de connexion donc le même mot de passe.</p>
     <form method="post" action="../script/new-site.php">
       <div class="mb-3">
-        <label for="domainName" class="form-label">Nom de domaine:</label>
+        <label for="domainName" class="form-label">Nom de domaine du nouveau site:</label>
         <div><input type="text" id="domainName" name="domainName" aria-describedby="domainName" required><span>-groupe16.fr</span></div>
-      </div>
-      <div class="mb-3">
-        <label for="domainName" class="form-label">Mot de passe de la BDD</label>
-        <div><input type="password" id="password" name="password" aria-describedby="password" required></div>
       </div>
       <button type="submit" class="mt-3 btn btn-primary">Créer votre site et sa BDD</button>
     </form>

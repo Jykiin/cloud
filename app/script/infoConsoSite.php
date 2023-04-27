@@ -8,8 +8,6 @@ $bdd_host = "localhost";
 $bdd_username= "groupe16";
 $bdd_password = "";
 $bdd_name = "groupe16";
-$getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
-$userData = $getUserData->getByUserName($username);
 
 $username_folder = $username;
 $user_bdd_name = $username;
