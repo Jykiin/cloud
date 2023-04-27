@@ -7,8 +7,6 @@
 <body>
     <h1>Change Password</h1>
     <form method="post" action="../script/change-pass.php">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username"><br>
 
         <label for="oldpassword">Old Password:</label>
         <input type="password" name="oldpassword" id="oldpassword"><br>
