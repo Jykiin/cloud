@@ -1,8 +1,7 @@
 <?php
-session_start();
 require dirname(__FILE__, 0) . 'getUsersData.php';
 
-$username = $_SESSION['username'];
+$username = 'gustave';
 $bdd_host = "localhost";
 $bdd_username= "groupe16";
 $bdd_password = "";
@@ -17,9 +16,12 @@ $userBddSize = "";
 if (isset($username)) {
     $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
     $userData = $getUserData->getByUserName($username);
-
+    if($userData) {
     $username_folder = $userData['username'];
     $user_bdd_name = $userData['username'];
+    } else {
+        header("Location: /?error_data=invalid_bdd_data");
+    }
 }
 
 # récupération de la taille du dossier utilisateur
