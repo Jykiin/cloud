@@ -44,7 +44,7 @@ echo $username;
                       <p>Cliquez sur un des sites web pour obtenir vos données de consommations.</p>
 
                       <?php
-                      $domains = getUserDataFromBDD($_SESSION['username'], 'domain');
+                      $domains = getUserDataFromBDD($_SESSION['username'], 'all');
                       var_dump($domains);
                       foreach($domains as $domain): ?>
                           <div class="list-group">
