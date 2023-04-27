@@ -33,7 +33,7 @@ echo $username;
 
 
 
-
+<?php var_dump($_GET['error_data']) ?>
     <?php
           if($_SESSION["username"]){ ?>
           <a class="my-2 btn btn-primary w-25" href="src/sign-in.php">Mes informations</a>
