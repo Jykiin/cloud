@@ -42,5 +42,5 @@ if((isset($userBddSize) && isset($userSiteSize)) && (!empty($userBddSize) && !em
     header("Location: /?user_site_size=" . urlencode($userSiteSize)."&user_bdd_size=". urlencode($userBddSize));
     exit();
 } else {
-    header("Location: /?error=invalid_values");
+    header("Location: /?error_data=invalid_values");
 }
