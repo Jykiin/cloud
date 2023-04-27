@@ -69,21 +69,14 @@ echo $username;
                           <table class="table table-striped">
                               <thead>
                               <tr>
-                                  <th scope="col">Site web</th>
                                   <th scope="col">Taille dossier sur disque</th>
                                   <th scope="col">Taille base de donnée</th>
                               </tr>
                               </thead>
                               <tbody>
                               <tr>
-                                  <td>Mon premier site</td>
                                   <td><?php echo $_GET['user_site_size'] ?></td>
                                   <td><?php echo $_GET['user_bdd_size'] ?></td>
-                              </tr>
-                              <tr>
-                                  <td>Mon second site</td>
-                                  <td>200ko</td>
-                                  <td>300ko</td>
                               </tr>
                               </tbody>
                           </table>
