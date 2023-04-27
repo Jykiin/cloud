@@ -52,8 +52,8 @@ $mysqli->close();
 session_unset();
 session_destroy();
 
-fastcgi_finish_request();
-shell_exec("../restartNginx.sh");
+//fastcgi_finish_request();
+//shell_exec("../restartNginx.sh");
 header('Location: /?info=supp_account');
 exit();
 }
