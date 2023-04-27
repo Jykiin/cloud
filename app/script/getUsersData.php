@@ -11,17 +11,20 @@ class GetUserData {
         }
     }
 
-    public function getUsers() {
+
+    public function getUsers():array {
         $sql = "SELECT username, domain_name, pwd FROM users";
-        $data = "";
+        $data = array();
+
         if ($query = $this->mysqli->query($sql)) {
-            $result = $query->get_result();
-            $data = $result->fetch_assoc();
-            $result->free();
-            return $data;
+            while ($row = $query->fetch_assoc()) {
+                $data[] = $row;
+            }
+            $query->free();
         }
         return $data;
     }
+
 
     public function getByUserName($username) {
         $sql = "SELECT * FROM users WHERE username = ?";
