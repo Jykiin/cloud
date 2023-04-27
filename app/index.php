@@ -1,3 +1,9 @@
+<?php
+session_start();
+$username = $_SESSION["username"];
+echo ("test");
+echo $username;
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,10 +16,21 @@
     <div class="container w-100 flex align-items-center justify-content-center">
       <h1 class="mt-5 text-center fw-bold text-primary fs-4">Accueil projet cloud</h1>
       <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
-    <nav class="shadow border border-1 border-success flex flex-column gap-2 align-items-center justify-content-center">
+      <nav class="shadow border border-1 border-success flex flex-column gap-2 align-items-center justify-content-center">
       <a class="my-2 btn btn-primary w-25" href="/">Accueil</a>
-      <a class="my-2 btn btn-primary w-25" href="src/sign-in.php">Inscription</a>
-      <a class="my-2 btn btn-primary w-25" href="src/connexion.php">Connexion</a>
+
+      <?php
+
+      if(!$_SESSION["username"]){
+          echo '<a class="my-2 btn btn-primary w-25" href="src/sign-in.php">Inscription</a>
+      <a class="my-2 btn btn-primary w-25" href="src/connexion.php">Connexion</a>';
+
+      }else{
+          echo ' <a class="my-2 btn btn-primary w-25" href="src/change_pass.php">Changer mon mot de passe</a>';
+          echo ' <a class="my-2 btn btn-primary w-25" href="src/logout.php">se déconnecter</a>';
+      }
+      ?>
+
   </nav>
 </div>
 
