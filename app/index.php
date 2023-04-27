@@ -40,21 +40,25 @@ echo $username;
               <div class="d-flex flex-column justify-content-center align-items-center">
                   <div class="p-2 d-flex flex-column justify-content-center align-items-center gap-1">
 
-                      <h3>Mes sites web</h3>
-                      <p>Cliquez sur un des sites web pour obtenir vos données de consommations.</p>
-
+                      <h3 class="text-primary">Mes sites web</h3>
                       <?php
                       $domains = getUserDataFromBDD($_SESSION['username'], 'domain');
                       var_dump($domains);
-                      foreach($domains as $domain): ?>
-                          <div class="list-group">
-                              <a href="script/infoConsoSite.php" class="list-group-item list-group-item-action">
-                                  <?= $domain ?>
-                              </a>
-                          </div>
-                      <?php endforeach ?>
-                      <h3>Ma consommation d'espace disque</h3>
-<!--                      <a class="my-2 btn btn-success w-50 fw-bold text-white" href="script/infoConsoSite.php"> Générer mes données</a>-->
+                      if($domains > 1):
+                          echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur un des sites web pour obtenir vos données de consommations.</p>';
+                          foreach($domains as $domain): ?>
+                              <div class="list-group">
+                                  <a href="script/infoConsoSite.php" class="list-group-item list-group-item-action">
+                                      <?= $domain ?>
+                                  </a>
+                              </div>
+                          <?php endforeach ?>
+                      <?php else: ?>
+                          <h3>Domaine de mon site web: <span class="text-success fw-bold"><?= $domains ?></span></h3>
+                          <h4>Ma consommation d'espace disque sur ce site web:</h4>
+                          <a class="my-2 btn btn-success w-50 fw-bold text-white" href="script/infoConsoSite.php"> Générer mes données</a>
+                      <?php endif ?>
+
                   </div>
                   <?php if(!isset($_GET['user_site_size']) || !isset($_GET['user_bdd_size'])) { ?>
                           <?php if(!isset($_GET['error_data'])) { ?>
