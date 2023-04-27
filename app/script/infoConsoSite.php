@@ -13,18 +13,18 @@ $bdd_name = "groupe16";
 
 
 $username_folder = $username;
-$user_bdd_name = null;
+$user_bdd_name = $username;
 
 $userSiteSize = "étoile";
 $userBddSize = "lapin";
 
-if (isset($username)) {
-    $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
-    $userData = $getUserData->getByUserName($username);
-    if($userData) {
-        $user_bdd_name = $userData['username'];
-    }
-}
+//if (isset($username)) {
+//    $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
+//    $userData = $getUserData->getByUserName($username);
+//    if($userData) {
+//        $user_bdd_name = $userData['username'];
+//    }
+//}
 
 # récupération de la taille du dossier utilisateur
 if(!empty($username_folder))  {
