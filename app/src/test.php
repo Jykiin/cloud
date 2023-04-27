@@ -9,7 +9,7 @@ $backup_files = array_diff(scandir($BACKUP_DIR), array('..', '.'));
 
 // Affichage de la liste backups
 foreach ($backup_files as $file) {
-    if (strpos($file, $_SESSION['username']) !== false) {
+    if (strpos($file, "amaury") !== false) {
         echo $file;
     }
 }
@@ -30,8 +30,6 @@ foreach ($backup_files as $file) {
 
 <body>
 <!--  http://4.231.249.233-->
-<a href="/home/backup/backup-amaury-2023-04-27_10-32-58.tgz" download>backup-amaury-2023-04-27_10-32-58.tgz</a>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
