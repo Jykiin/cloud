@@ -1,5 +1,5 @@
 <?php //phpinfo()
-
+session_start();
 
 // Variables
 $BACKUP_DIR = "/home/backup";
@@ -9,7 +9,13 @@ $backup_files = array_diff(scandir($BACKUP_DIR), array('..', '.'));
 
 // Affichage de la liste backups
 foreach ($backup_files as $file) {
-    echo "<a href='/src/download.php?file=$file'>$file</a><br>";
+    $pos = strpos($file, $_SESSION['username']);
+
+    if ($pos === false) {
+        echo "il n'y a pas de chaine correspondante";
+    } else {
+        echo "<a href='/src/download.php?file=$file'>$file</a><br>";
+    }
 }
 
 
