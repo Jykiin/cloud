@@ -6,41 +6,37 @@ $bdd_host = "localhost";
 $bdd_username= "groupe16";
 $bdd_password = "";
 $bdd_name = "groupe16";
-$getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
-$userData = $getUserData->getByUserName($username);
-var_dump($userData);
+//$getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
+//$userData = $getUserData->getByUserName($username);
+//var_dump($userData);
 
 
 $username_folder = null;
 $user_bdd_name = null;
 
-$userSiteSize = "";
-$userBddSize = "";
+$userSiteSize = "étoile";
+$userBddSize = "lapin";
 
-if (isset($username)) {
-    $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
-    $userData = $getUserData->getByUserName($username);
-    if($userData) {
-    $username_folder = $userData['username'];
-    $user_bdd_name = $userData['username'];
-    } else {
-        header("Location: /?error_data=invalid_bdd_data");
-    }
-}
+//if (isset($username)) {
+//    $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
+//    $userData = $getUserData->getByUserName($username);
+//    if($userData) {
+//    $username_folder = $userData['username'];
+//    $user_bdd_name = $userData['username'];
+//    } else {
+//        header("Location: /?error_data=invalid_bdd_data");
+//    }
+//}
 
 # récupération de la taille du dossier utilisateur
 if(!empty($username_folder))  {
 $dossier_utilisateur = shell_exec("./info_conso_site.sh $username_folder");
     $userSiteSize = $dossier_utilisateur;
-} else {
-    header("Location: /?error_data=invalid_folder_values");
 }
 # récupération de la taille de la base de données utilisateur
 if(!empty($username_folder) && !empty($user_bdd_name))  {
 $db_utilisateur = shell_exec("./info_conso_bdd.sh $username $user_bdd_name");
     $userBddSize = $db_utilisateur;
-} else {
-    header("Location: /?error_data=invalid_bdd_values");
 }
 
 if(!empty($username_folder))  {
