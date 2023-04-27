@@ -16,7 +16,7 @@ echo $username;
     <div class="container w-100 d-flex flex-column align-items-center justify-content-center">
       <h1 class="mt-5 text-center fw-bold text-primary fs-4">Accueil projet cloud</h1>
       <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
-      <nav class="shadow min-w-100 p-5 d-flex flex-column gap-2 align-items-center justify-content-center">
+      <nav class="shadow w-100 p-5 d-flex flex-column gap-2 align-items-center justify-content-center">
           <div class="d-flex flex-column gap-2 align-items-center justify-content-center">
               <a class="my-2 btn btn-primary" href="/">Accueil</a>
               <?php
