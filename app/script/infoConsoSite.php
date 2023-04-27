@@ -34,7 +34,7 @@ $dossier_utilisateur = shell_exec("./info_conso_site.sh $username_folder");
 # récupération de la taille de la base de données utilisateur
 if(!empty($username) && !empty($user_bdd_name) && !empty($user_bdd_password))  {
     $db_utilisateur = shell_exec("./info_conso_bdd.sh $username $user_bdd_name $user_bdd_password");
-    $userBddSize = $db_utilisateur;
+    $userBddSize = $db_utilisateur." MB";
 }
 
 if(!empty($username_folder))  {
