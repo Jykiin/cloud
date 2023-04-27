@@ -1,4 +1,19 @@
-<?php //phpinfo() ?>
+<?php //phpinfo()
+
+
+// Variables
+$BACKUP_DIR = "/home/backup";
+
+// Liste des backups
+$backup_files = array_diff(scandir($BACKUP_DIR), array('..', '.'));
+
+// Affichage de la liste backups
+foreach ($backup_files as $file) {
+    echo "<a href='/src/download.php?file=$file'>$file</a><br>";
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 
