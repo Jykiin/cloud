@@ -4,6 +4,7 @@ $username = $_SESSION["username"];
 require_once __DIR__. '/script/getUsersData.php';
 require_once __DIR__. '/script/bonus.php';
 $cpuLoadVar = cpuLoad();
+
 $hddVar = spaceUsed($username);
 $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
 $domains = $getUserData->getDomainsByUserName($username);
