@@ -16,9 +16,11 @@ if (isset($_GET['domain'])) {
     if($domain === $domains[0])  {
         $user_bdd_name = $username;
         $user_bdd_username = $username;
+        $www = "www";
     } else  {
         $user_bdd_name = $username."_2";
         $user_bdd_username = $username."_2";
+        $www = "www2";
     }
 } else {
     header('Location /?error=no_domain');
@@ -38,8 +40,8 @@ if (isset($username)) {
 }
 
 # récupération de la taille du dossier utilisateur
-if(!empty($username_folder))  {
-$dossier_utilisateur = shell_exec("./info_conso_site.sh $username_folder");
+if(!empty($username_folder) && !empty($www))  {
+$dossier_utilisateur = shell_exec("./info_conso_site.sh $username_folder $www");
     $userSiteSize = $dossier_utilisateur;
 }
 # récupération de la taille de la base de données utilisateur
