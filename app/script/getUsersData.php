@@ -11,15 +11,20 @@ class GetUserData {
         }
     }
 
-    public function getUsers() {
-        $sql = "SELECT * FROM users";
 
-        if ($result = $this->mysqli->query($sql)) {
-            echo "Résultats de users: " . $result -> num_rows;
-            $result -> free_result();
+    public function getUsers():array {
+        $sql = "SELECT username, domain_name, pwd FROM users";
+        $data = array();
+
+        if ($query = $this->mysqli->query($sql)) {
+            while ($row = $query->fetch_assoc()) {
+                $data[] = $row;
+            }
+            $query->free();
         }
-        return $result;
+        return $data;
     }
+
 
     public function getByUserName($username) {
         $sql = "SELECT * FROM users WHERE username = ?";
@@ -40,6 +45,48 @@ class GetUserData {
             echo "Error preparing statement: " . $this->mysqli->error;
         }
     }
+
+    public function getDomainsByUserName($username) {
+        $sql = "SELECT domain_name FROM users WHERE username = ?";
+        $domains = array();
+        if ($querydomain = $this->mysqli->prepare($sql)) {
+            $querydomain->bind_param("s", $username);
+
+            if ($querydomain->execute()) {
+                $result = $querydomain->get_result();
+                while ($row = $result->fetch_assoc()) {
+                    $domains[] = $row['domain_name'];
+                }
+            } else {
+                echo "Error executing statement: " . $querydomain->error;
+            }
+            $querydomain->close();
+
+        } else {
+            echo "Error preparing statement: " . $this->mysqli->error;
+        }
+
+        return $domains;
+    }
+
+    public function insertNewUser($username, $password,$ssh,$domain){
+
+        if ($this->mysqli->connect_errno) {
+            echo "Failed to connect to MySQL: " . $this->mysqli -> connect_error;
+            exit();
+        }
+        $sql = "INSERT INTO users (username, pwd, ssh, domain_name) VALUES ('$username','$password','$ssh','$domain')";
+
+        if ($this->mysqli->query($sql)) {
+            echo("Record inserted successfully.<br />");
+            header('Location: /');
+        }
+        if ($this->mysqli->errno) {
+            echo("Could not insert <br />".$this->mysqli->error);
+        }
+        $this->mysqli->close();
+    }
+
 }
 
 
