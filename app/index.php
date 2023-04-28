@@ -2,8 +2,6 @@
 session_start();
 $username = $_SESSION["username"];
 require_once __DIR__. '/script/getUsersData.php';
-echo ("test");
-echo $username;
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +31,6 @@ echo $username;
           }
               ?>
           </div>
-
     <?php
           if($_SESSION["username"]){ ?>
           <h2 class="mt-5 mb-1 text-info fw-bold text-center" href="src/sign-in.php">Mes informations</h2>
