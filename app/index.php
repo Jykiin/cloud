@@ -75,11 +75,6 @@ $domains = $getUserData->getDomainsByUserName($username);
                                   <td><?php echo $_GET['user_site_size'] ?></td>
                                   <td><?php echo $_GET['user_bdd_size'] ?></td>
                               </tr>
-                              <tr>
-                                  <td><?php echo $memVar ?></td>
-                                  <td><?php echo $hddVar?></td>
-                                  <td><?php echo $cpuLoadVar?></td>
-                              </tr>
                               </tbody>
                           </table>
                       </div>
@@ -88,6 +83,11 @@ $domains = $getUserData->getDomainsByUserName($username);
                       <p class="warning-statement fw-bold text-lg text-danger">Une erreur s'est produite lors de la génération des données.</p>
                       <p class="warning-statement fw-bold">Contacter le service client pour avoir plus d'information</p>
                   <?php }  ?>
+                
+                                  <p><?php echo $memVar ?></p>
+                                  <p><?php echo $hddVar?></p>
+                                  <p><?php echo $cpuLoadVar?></p>
+                  
 
               </div>
          <?php } ?>

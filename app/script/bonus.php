@@ -16,7 +16,8 @@ return $output;
 
 }
 function cpuLoad(){
-$command = "cat /proc/stat | grep '^cpu ' | awk '{total=$2+$3+$4+$5; user=$2; system=$4; usage=(user+system)*100/total} END {printf \"User CPU Load: %.2f%%\\n\", usage}'";
+$command = "cat /proc/stat | grep 'cpu ' | awk '{usage=($2+$4)*100/($2+$4+$5)} END {printf \"CPU Load: %.2f%%\\n\", usage}'";
+
 $output = shell_exec($command);
 var_dump($command);
 var_dump($output);
