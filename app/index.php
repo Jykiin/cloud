@@ -4,7 +4,6 @@ $username = $_SESSION["username"];
 require_once __DIR__. '/script/getUsersData.php';
 require_once __DIR__. '/script/bonus.php';
 $cpuLoadVar = cpuLoad();
-$memVar = memoryUsed();
 $hddVar = spaceUsed($username);
 $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
 $domains = $getUserData->getDomainsByUserName($username);
@@ -84,7 +83,6 @@ $domains = $getUserData->getDomainsByUserName($username);
                       <p class="warning-statement fw-bold">Contacter le service client pour avoir plus d'information</p>
                   <?php }  ?>
                 
-                                  <p><?php echo $memVar ?></p>
                                   <p><?php echo $hddVar?></p>
                                   <p><?php echo $cpuLoadVar?></p>
                   
