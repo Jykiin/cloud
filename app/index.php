@@ -2,8 +2,6 @@
 session_start();
 $username = $_SESSION["username"];
 require_once __DIR__. '/script/getUsersData.php';
-echo ("test");
-echo $username;
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +12,7 @@ echo $username;
     <title>Accueil</title>
   </head>
   <body>
-<!--  <a href="http://4.231.249.233/home/backup/backup-amaury-2023-04-27_10-32-58.tgz">backup-amaury-2023-04-27_10-32-58.tgz</a>-->
+
     <div class="container w-100 d-flex flex-column align-items-center justify-content-center">
       <h1 class="mt-5 text-center fw-bold text-primary fs-4">Accueil projet cloud</h1>
       <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
@@ -33,7 +31,6 @@ echo $username;
           }
               ?>
           </div>
-
     <?php
           if($_SESSION["username"]){ ?>
           <h2 class="mt-5 mb-1 text-info fw-bold text-center" href="src/sign-in.php">Mes informations</h2>
@@ -43,19 +40,16 @@ echo $username;
                       <?php
                       $username = $_SESSION['username'];
                       $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
-                      $domains = $getUserData->getUsers();
+                      $userData = $getUserData->getDomainsByUserName($username);
+                      $domains = $getUserData->getDomainsByUserName($username);
                           echo '<h4> Site(s) web sur mon compte: </h4>';
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur le ou les site(s) web pour obtenir vos données de consommations.</p>';
-                          foreach($domains as $domain):
-                              if($domain['username'] === $_SESSION['username']): ?>
-
+                          foreach($domains as $domain): ?>
                               <div class="list-group">
-                                  <a href="script/infoConsoSite.php?domain=<?php echo urlencode($domain['domain_name']) ?>" class="my-1 list-group-item list-group-item-action bg-success text-white fw-bold border border-0">
-                                      <?= $domain['domain_name'] ?>
+                                  <a href="script/infoConsoSite.php?domain=<?php echo urlencode($domain) ?>" class="my-1 list-group-item list-group-item-action bg-success text-white fw-bold border border-0">
+                                      <?= $domain ?>
                                   </a>
                               </div>
-
-                              <?php endif ?>
                           <?php endforeach ?>
                           <h4>Ma consommation par site(s) web:</h4>
                   </div>

@@ -5,23 +5,24 @@ $username = $_SESSION['username'];
 $user_bdd_name = "";
 $user_bdd_username = "";
 
-if (isset($_GET['domain'])) {
-    $domain = $_GET['domain'];
-    if($domain === $_SESSION['username'])  {
-        $user_bdd_name = $username;
-        $user_bdd_username = $username;
-    } else  {
-        $user_bdd_name = $username."-2";
-        $user_bdd_username = $username."-2";
-    }
-} else {
-    header('Location /?error=no_domain');
-}
-
 $bdd_host = "localhost";
 $bdd_username= "groupe16";
 $bdd_password = "";
 $bdd_name = "groupe16";
+$getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
+$domains = $getUserData->getDomainsByUserName($username);
+if (isset($_GET['domain'])) {
+    $domain = $_GET['domain'];
+    if($domain === $domains[0])  {
+        $user_bdd_name = $username;
+        $user_bdd_username = $username;
+    } else  {
+        $user_bdd_name = $username."_2";
+        $user_bdd_username = $username."_2";
+    }
+} else {
+    header('Location /?error=no_domain');
+}
 
 $username_folder = $username;
 $user_bdd_password = "";
@@ -30,7 +31,6 @@ $userSiteSize = "étoile";
 $userBddSize = "lapin";
 
 if (isset($username)) {
-    $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
     $userData = $getUserData->getByUserName($username);
     if($userData) {
         $user_bdd_password = $userData['pwd'];
