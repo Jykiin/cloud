@@ -2,6 +2,8 @@
 session_start();
 $username = $_SESSION["username"];
 require_once __DIR__. '/script/getUsersData.php';
+$getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
+$domains = $getUserData->getDomainsByUserName($username);
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +29,9 @@ require_once __DIR__. '/script/getUsersData.php';
               echo ' <a class="my-2 btn btn-primary" href="src/updatepass.php">Changer mon mot de passe</a>';
               echo ' <a class="my-2 btn btn-primary" href="src/logout.php">se déconnecter</a>';
               echo ' <a class="my-2 btn btn-warning" href="src/backup.php">télécharger backup</a>';
+              if(empty($domains[1]) && isset($domains[1])) {
               echo ' <a class="my-2 btn btn-primary" href="src/second-site.php">Créer un second site</a>';
+              }
           }
               ?>
           </div>
@@ -38,9 +42,6 @@ require_once __DIR__. '/script/getUsersData.php';
                   <div class="p-2 d-flex flex-column justify-content-center align-items-center gap-1">
 
                       <?php
-                      $username = $_SESSION['username'];
-                      $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
-                      $domains = $getUserData->getDomainsByUserName($username);
                           echo '<h4> Site(s) web sur mon compte: </h4>';
                           echo '<p class="my-2 text-info text-center fw-bold">Cliquez sur le ou les site(s) web pour obtenir vos données de consommations.</p>';
                           foreach($domains as $domain): ?>
