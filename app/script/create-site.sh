@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo mkdir /home/$1/www2
-sudo chmod -R 775 /home/$1/www2
+sudo chown $1:www-data /home/$1/www2
+sudo chmod -R 755 /home/$1/www2
 # Créer le fichier de configuration Nginx
 sudo cp ../ressource/defaultExemplesite2 /etc/nginx/sites-enabled/$2-groupe16.fr
 sudo sed -i "s/VALEURUSER/$1/g" /etc/nginx/sites-enabled/$2-groupe16.fr
