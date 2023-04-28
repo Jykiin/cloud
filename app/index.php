@@ -14,7 +14,7 @@ echo $username;
     <title>Accueil</title>
   </head>
   <body>
-<!--  <a href="http://4.231.249.233/home/backup/backup-amaury-2023-04-27_10-32-58.tgz">backup-amaury-2023-04-27_10-32-58.tgz</a>-->
+
     <div class="container w-100 d-flex flex-column align-items-center justify-content-center">
       <h1 class="mt-5 text-center fw-bold text-primary fs-4">Accueil projet cloud</h1>
       <p class="mt-2 text-center"> Bienvenue chez nous, inscrivez-vous ou rejoignez votre compte:</p>
