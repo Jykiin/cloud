@@ -29,7 +29,7 @@ $domains = $getUserData->getDomainsByUserName($username);
               echo ' <a class="my-2 btn btn-primary" href="src/updatepass.php">Changer mon mot de passe</a>';
               echo ' <a class="my-2 btn btn-primary" href="src/logout.php">se déconnecter</a>';
               echo ' <a class="my-2 btn btn-warning" href="src/backup.php">télécharger backup</a>';
-              if(empty($domains[1]) && isset($domains[1])) {
+              if(!$domains[1]) {
               echo ' <a class="my-2 btn btn-primary" href="src/second-site.php">Créer un second site</a>';
               }
           }
