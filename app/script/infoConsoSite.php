@@ -10,10 +10,10 @@ $bdd_username= "groupe16";
 $bdd_password = "";
 $bdd_name = "groupe16";
 $getUserData = new GetUserData($bdd_host, $bdd_username, $bdd_password, $bdd_name);
-
+$domains = $getUserData->getDomainsByUserName($username);
 if (isset($_GET['domain'])) {
     $domain = $_GET['domain'];
-    if($domain === $_SESSION['username'])  {
+    if($domain === $domains[0])  {
         $user_bdd_name = $username;
         $user_bdd_username = $username;
     } else  {
