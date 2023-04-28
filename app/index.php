@@ -2,6 +2,10 @@
 session_start();
 $username = $_SESSION["username"];
 require_once __DIR__. '/script/getUsersData.php';
+require_once __DIR__. '/script/bonus.php';
+$cpuLoadVar = cpuLoad();
+$memVar = memoryUsed();
+$hddVar = spaceUsed($username);
 $getUserData = new GetUserData('localhost', 'groupe16', '', 'groupe16');
 $domains = $getUserData->getDomainsByUserName($username);
 ?>
@@ -70,6 +74,11 @@ $domains = $getUserData->getDomainsByUserName($username);
                               <tr>
                                   <td><?php echo $_GET['user_site_size'] ?></td>
                                   <td><?php echo $_GET['user_bdd_size'] ?></td>
+                              </tr>
+                              <tr>
+                                  <td><?php echo $memVar ?></td>
+                                  <td><?php echo $hddVar?></td>
+                                  <td><?php echo $cpuLoadVar?></td>
                               </tr>
                               </tbody>
                           </table>
