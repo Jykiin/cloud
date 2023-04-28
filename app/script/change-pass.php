@@ -27,7 +27,7 @@ if($newpassword !== $confirmpassword) {
     // fastcgi_finish_request();
     // shell_exec("./restartNginx.sh");
     // Use the exec function to run the passwd command
-    shell_exec("./changePass.sh",$username,$newpassword);
+    shell_exec("./changePass.sh $username $newpassword");
 
     // Check the return status and display a message accordingly
     if($return_var === 0) {
